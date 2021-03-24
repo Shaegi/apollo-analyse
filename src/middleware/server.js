@@ -3,7 +3,7 @@ const spawn  = require('cross-spawn');
 const path = require('path')
 
 
-const startServer = (queryInfos) => {
+const startServer = (queryInfos, errors) => {
     const app = express()
     console.log(__dirname, '..', 'client')
     const ls = spawn('npm', ['run', 'dev'],{ cwd: path.resolve(__dirname, '..', 'client')});
@@ -14,11 +14,11 @@ const startServer = (queryInfos) => {
 
     app.get('/tracingInfos', (req, res) => {
         console.log('???')
-        return res.send(queryInfos)
+        return res.send({ infos: queryInfos, errors: errors })
     })
 
     app.get('/tracingInfos/:id', (req, res) => {
-        return res.send(queryInfos[req.params.id])
+        return res.send(JSON.stringify({ infos: queryInfos[req.params.id] || null, errors: errors[req.params.id] || null }))
     })
 
     app.listen(5000, () => {

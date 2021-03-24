@@ -1,6 +1,7 @@
 import { InferGetStaticPropsType } from 'next'
 import styled from 'styled-components'
-import { TracingInfo } from '../types/TracingInfo'
+import TextWidget from '../components/TextWidget'
+import { ErrorInfo, TracingInfo } from '../types/TracingInfo'
 import { getAverageExecutionTimeInMs } from '../utils'
 
 
@@ -15,20 +16,6 @@ const Wrapper = styled.main`
   }
 
   ul.widget-list {
-    li {
-      padding: 8px 16px;
-      text-align: center;
-      align-items: center;
-      border: 1px solid ${p => p.theme.color.primary};
-      .label {
-        font-size: 0.8em;
-        color: gray;
-      }
-      .value {
-        color: ${p => p.theme.color.primary};
-        font-size: 1.2em;
-      }
-    }
     margin-bottom: 32px;
   }
 
@@ -55,22 +42,24 @@ export type DashboardProps = InferGetStaticPropsType<typeof getStaticProps>
 
 function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
   console.log(props)
-  const { tracingInfos, errors } = props
+  const { tracingInfos, errorCount } = props
   return (
       <Wrapper>
         <h1>Dashboard</h1>
         <ul className='widget-list'>
           <li>
-            <span className='label'>Errors</span>
-            <div className='value'>
-              {errors.length}
-            </div>
+            <TextWidget 
+              error={errorCount > 0}
+              success={errorCount === 0}
+              value={errorCount}
+              label={'Errors'}
+            />
           </li>
           <li>
-          <span className='label'>Total Operations</span>
-            <div className='value'>
-              {Object.values(tracingInfos).reduce((acc, curr) => acc + curr.count, 0)}
-            </div>
+            <TextWidget 
+              value={Object.values(tracingInfos).reduce((acc, curr) => acc + curr.count, 0)}
+              label={'Total Operations'}
+            />
           </li>
         </ul>
         <ul className='operation-list'>
@@ -97,13 +86,13 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
 // It won't be called on client-side, so you can even do
 // direct database queries. See the "Technical details" section.
 export async function getStaticProps() {
-  const tracingInfos: Record<string, TracingInfo> = await (await fetch('http://localhost:5000/tracingInfos')).json()
+  const { infos: tracingInfos, errors }: { infos: Record<string, TracingInfo>, errors: Record<string, ErrorInfo>} = await (await fetch('http://localhost:5000/tracingInfos')).json()
   // By returning { props: posts }, the Blog component
   // will receive `posts` as a prop at build time
   return {
     props: {
       tracingInfos,
-      errors: []
+      errorCount: Object.values(errors).reduce((acc, curr) => acc + (curr.errors?.length || 0) ,0)
     },
   }
 }

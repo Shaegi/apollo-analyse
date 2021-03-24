@@ -1,4 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
+const casual = require('casual')
 
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
@@ -9,7 +10,12 @@ const typeDefs = gql`
   # This "Book" type defines the queryable fields for every book in our data source.
   type Book {
     title: String
-    author: String
+    author: Author
+  }
+
+  type Author  {
+    name: String
+    books: [Book]
   }
 
   # The "Query" type is special: it lists all of the available queries that
@@ -17,17 +23,36 @@ const typeDefs = gql`
   # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
     books: [Book]
+    maybeError: [Book]
+    longRunningQuery: [Book]
   }
 `;
 
 const books = [
     {
       title: 'The Awakening',
-      author: 'Kate Chopin',
+      author: {name: 'Kate Chopin'},
+    },
+    {
+      title: 'The Sleep',
+      author: {name: 'Kate Chopin2'},
     },
     {
       title: 'City of Glass',
-      author: 'Paul Auster',
+      author: {
+        name: 'Paul Auster',
+        books: [
+          {
+            title: 'City of Glass'
+          },
+          {
+            title: 'City of Grass'
+          },
+          {
+            title: 'City of Gas'
+          }
+        ]
+      },
     },
   ];
 
@@ -36,7 +61,26 @@ const books = [
 const resolvers = {
     Query: {
       books: () => books,
+      longRunningQuery: () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(books)
+          }, 1000)
+        })
+      },
+      maybeError: () => {
+        return casual.boolean ? new Error('Woops you lost the coin-flip') : books
+      },
     },
+    Book: {
+      author: (parent) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(parent.author)
+          }, 1000)
+        })
+      }
+    }
   };
 
   console.log('??',process.cwd)

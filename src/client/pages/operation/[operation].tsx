@@ -2,7 +2,9 @@ import { info } from 'console'
 import { InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
 import { resolve } from 'path'
+import { useCallback, useState } from 'react'
 import styled from 'styled-components'
+import Tabs, { TabsProps } from '../../components/Tabs'
 import TextWidget from '../../components/TextWidget'
 import { TracingInfo } from '../../types/TracingInfo'
 import { convertNSToMs, getAverageExecutionTimeInMs } from '../../utils'
@@ -19,11 +21,95 @@ const Wrapper = styled.div`
   }
 `
 
-export type OperationProps = InferGetStaticPropsType<typeof getStaticProps>
+type Node<A = {}> = A & {
+  children?: Node<A>[]
+}
+
+const findDeep = <A extends Object>(arr: Node<A>[], condition: (node: Node<A>) => boolean): Node<A> | null => {
+  let found = null
+  const find = (obj: Node<A>) => {
+    if(condition(obj)) {
+      found = obj
+      return true
+    } else if(obj.children) {
+      return obj.children.some(find)
+    }
+    return null
+  }
+  arr.some(find)
+
+  return found
+}
+
+export type OperationProps = InferGetStaticPropsType<typeof getServerSideProps>
+
+export type OperationNode = Node<({
+  totalExecutionTime?: number
+  totalExecutions?: number
+  name?: string
+} & TracingInfo['tracingInfos'][number]['execution']['resolvers'][number])>
 
 const OperationProps: React.FC<OperationProps> = (props) => {
-  const { name, count, averageExecutionTime, operationTree } = props
-  console.log(props)
+  const { name, count, averageExecutionTime,  errors, res } = props
+  const operationTree = res.infos.tracingInfos.reduce((acc, curr, infoIndex) => {
+    curr.execution.resolvers.forEach((resolver, resolverIndex) => {
+        
+        let currentPathParent: OperationNode | null = acc[0]
+        resolver.path.forEach((path, index, arr) => {
+          if(typeof path === 'string') {
+            const child = currentPathParent?.fieldName === path ? currentPathParent : currentPathParent?.children?.find(node => node.fieldName === path)
+            if(child) {
+              if(index === arr.length -1) {
+                child.totalExecutionTime += resolver.duration
+                child.totalExecutions += 1
+              } else {
+                currentPathParent = child
+              }
+            } else {
+              if(index === arr.length -1) {
+                if(!currentPathParent) {
+                  acc.push({...resolver, totalExecutionTime: resolver.duration, totalExecutions: 1 })
+                } else {
+                  if(currentPathParent && !currentPathParent?.children) {
+                    currentPathParent.children = []
+                  }
+                  currentPathParent.children.push({
+                    ...resolver,
+                    totalExecutions: 1,
+                    totalExecutionTime: resolver.duration
+                  })
+                }
+              } else {
+                if(!currentPathParent) {
+                  acc.push({...resolver, totalExecutionTime: resolver.duration, totalExecutions: 1 })
+                }
+              }
+            }
+          }
+        })
+      })
+    return acc
+  }, [])
+
+  console.log('tree', operationTree, res)
+
+
+  const renderChildren = (node: OperationNode, level = 0) => {
+    console.log(node.name, level)
+    return <div key={node.fieldName || node.name} style={ {marginLeft: level * 20} }>
+      <h4>{node.fieldName || node.name}</h4>
+      {node.totalExecutionTime && <div>{convertNSToMs(node.totalExecutionTime / node.totalExecutions)}ms</div>}
+        {node.children && <div>
+        {node.children.map(v => renderChildren(v, level + 1))}
+      </div>}
+    </div>
+  }
+  const [activeTab, setActiveTab] = useState(0)
+
+  const handleSwitchTabs = useCallback<TabsProps['onSelect']>((tab, index) => {
+    setActiveTab(index)
+  },[])
+
 
   return <Wrapper>
     <a href='/'>{"< Back to Dashboard"}</a>
@@ -33,54 +119,58 @@ const OperationProps: React.FC<OperationProps> = (props) => {
     <div className='widgets'>
       <TextWidget label='Count' value={count} />
       <TextWidget label='Average Time' value={averageExecutionTime + 'ms'} />
+      <TextWidget label='Errors' value={errors?.length} error={errors?.length > 0} success={errors?.length === 0} />
     </div>
-    <div>
-      {operationTree.map(operation => {
-        const renderChildren = (obj) => {
-          console.log('render', obj)
-          return <div>
-            {obj.fieldName}
-            <div>{obj.averageExecutionTime}ms</div>
-          </div>
+    <Tabs 
+      tabs={[
+        {
+          label: 'Operation',
+          content: (
+            <div>
+              {operationTree.map(v => renderChildren(v, 0))}
+           </div>
+          ),
+          id: 'Operation'
+        },
+        {
+          label: 'Errors',
+          content: (
+            <div>
+              <ul>
+              {errors.map(error => <li>{error.message}</li>)}
+              </ul>
+           </div>
+          ),
+            id: 'errors'
         }
-        console.log(operation)
-        return <div className='operation-wrapper'>
-          <div>
-            <div>{operation.name}</div>
-            <div>{operation.averageExecutionTime}ms</div>
-          </div>
-          <div>
-            {operation.children.map(renderChildren)}
-          </div>
-        </div>
-      })}
-    </div>
+      ]}
+      selectedIndex={activeTab}
+      onSelect={handleSwitchTabs}
+    />
+    
   </Wrapper>
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { operation } = params
-  const res: TracingInfo = await (await fetch('http://localhost:5000/tracingInfos/' + operation)).json()
-
-  const operationTree = res.tracingInfos.reduce((acc, curr, infoIndex) => {
+  const res: {infos: TracingInfo, errors: any } = await (await fetch('http://localhost:5000/tracingInfos/' + operation)).json()
+  console.log(res)
+  const operationTree = res.infos.tracingInfos.reduce((acc, curr, infoIndex) => {
     curr.execution.resolvers.forEach((resolver, resolverIndex) => {
-      const findDeep = (obj: Record<string, any> & { children?: any[] }, condition: (node: typeof obj) => boolean) => {
-          if(condition(obj)) {
-            return obj
-          } else if(obj.children) {
-            return obj.children.reduce((acc, curr) => findDeep(curr, condition), null)
-          }
-          return null
-      }
       // find any field in tree with the same name as parent
-      const parent = acc.find((v) => findDeep(v, (obj) => resolver.parentType === obj.name || resolver.parentType === obj.parentType))
-      console.log(resolver.parentType, acc.map(v => v.name))
+      const parent = findDeep<OperationNode>(acc, (obj) => {
+        return resolver.parentType === obj.name || resolver.parentType === obj.parentType 
+      })
       if(parent) {
-        const child = parent.children.find(c => c.fieldName === resolver.fieldName)
-        if(child) {
-          child.totalExecutionTime += resolver.duration
+        if(parent.children) {
+          const child = findDeep(parent.children, c => c.fieldName === resolver.fieldName) 
+          if(child) {
+            child.totalExecutionTime += resolver.duration
+          } else {
+            parent.children?.push({  ...resolver, totalExecutionTime: resolver.duration })
+          }
         } else {
-          parent.children.push({  ...resolver, totalExecutionTime: resolver.duration })
+          parent.children= [{  ...resolver, totalExecutionTime: resolver.duration }]
         }
 
       } else {
@@ -93,33 +183,19 @@ export async function getStaticProps({ params }) {
     })  
 
     return acc
-  }, []).map(v => ({...v, averageExecutionTime: convertNSToMs(v.totalExecutionTime / res.tracingInfos.length) }))
-
+  }, [])
 
   return {
     props: {
       res,
-      name: res.name,
-      count: res.count,
-      averageExecutionTime: getAverageExecutionTimeInMs(res),
+      name: res.infos.name,
+      errors: res?.errors?.errors || null,
+      count: res.infos.count,
+      tracingInfos: res.infos.tracingInfos,
+      averageExecutionTime: getAverageExecutionTimeInMs(res.infos),
       operationTree
     }, // will be passed to the page component as props
   }
-}
-
-export async function getStaticPaths() {
-  // Call an external API endpoint to get posts
-  const res = await fetch('http://localhost:5000/tracingInfos')
-  const operations = await res.json()
-
-  // Get the paths we want to pre-render based on posts
-  const paths = Object.keys(operations).map((key) => ({
-    params: { operation: key },
-  }))
-
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
-  return { paths, fallback: false }
 }
 
 export default OperationProps

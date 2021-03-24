@@ -2,6 +2,7 @@ const { query } = require('express');
 const startServer = require('./server')
 
 const queryInfos = {};
+const errors = {}
 
 const operationsToSkip = ["IntrospectionQuery"];
 
@@ -9,7 +10,7 @@ module.exports = (options) => {
   return {
     serverWillStart() {
       console.log("Started");
-      startServer(queryInfos)
+      startServer(queryInfos, errors)
     },
     requestDidStart(requestContext) {
 
@@ -40,8 +41,19 @@ module.exports = (options) => {
             };
           }
         },
-        didEncounterErrors() {
-          console.log("encounter erro");
+        didEncounterErrors(requestContext) {
+          console.log("encounter erro", requestContext);
+          if(!errors[requestContext.queryHash]) {
+            errors[requestContext.queryHash] = {
+              errors: requestContext.errors,
+              operationName: requestContext.operationName
+            }
+          } else {
+            errors[requestContext.queryHash] = {
+              ...errors[requestContext.queryHash],
+              errors: [...errors[requestContext.queryHash].errors, requestContext.errors]
+            } 
+          }
         },
       };
     },
