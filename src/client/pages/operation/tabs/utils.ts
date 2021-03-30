@@ -18,6 +18,8 @@ arr.some(find)
 return found
 }
 
-export const geClosestNumber = (numbers: number[], target: number) => {
-    return numbers.reduce((acc, curr) => !acc ? curr :  acc < Math.abs(target - curr) ? acc : curr ,null)
+export const geClosestNumber = (counts: number[], goal: number) => {
+    return counts.reduce(function(prev, curr) {
+        return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
+    });
 }

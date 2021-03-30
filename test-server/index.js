@@ -75,7 +75,7 @@ const resolvers = {
         return new Promise((resolve) => {
           setTimeout(() => {
             resolve(books)
-          }, 1000)
+          }, (Math.floor(Math.random() * 6) + 1) * 1000)
         })
       },
       maybeError: () => {
