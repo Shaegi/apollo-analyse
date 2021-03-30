@@ -22,9 +22,16 @@ export type TracingInfo = {
 
 export type ErrorInfo = {
     operationName: string
-    errors: {
-        message: string
-        name: string
-        path: string[]
+    errors: Errors
+}
+
+export type Errors = (ErrorObj | ErrorObj[])[]
+
+export type ErrorObj = {
+    message: string
+    locations: {
+        column: number
+        line: number
     }[]
+    path: string[]
 }

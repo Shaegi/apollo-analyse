@@ -18,12 +18,22 @@ const typeDefs = gql`
     books: [Book]
   }
 
+  type ErrorBook {
+    title: String
+    author: ErrorAuthor
+  }
+
+  type ErrorAuthor {
+    name: String
+    books: [ErrorBook]
+  }
+
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each. In this
   # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
     books: [Book]
-    maybeError: [Book]
+    maybeError: [ErrorBook]
     longRunningQuery: [Book]
   }
 `;
@@ -71,6 +81,15 @@ const resolvers = {
       maybeError: () => {
         return casual.boolean ? new Error('Woops you lost the coin-flip') : books
       },
+    },
+    ErrorBook: {
+      author: parent => {
+        if(casual.boolean) {
+          return parent.author
+        } else {
+          return new Error('Error on deeper Level')
+        }
+      }
     },
     Book: {
       author: (parent) => {

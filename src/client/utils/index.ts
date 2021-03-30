@@ -4,6 +4,14 @@ export const getAverageExecutionTimeInMs = (info: TracingInfo) => convertNSToMs(
 
 export const convertNSToMs = (num: number) => Math.round(num / 10000) / 100
 
+export const formatNStoMsString = (num: number) => {
+  const nsNum = convertNSToMs(num)
+  if(nsNum < 0.1) {
+    return '<0.1ms'
+  }
+  return nsNum + 'ms'
+}
+
 export const findDeep = (obj: Record<string, any> & { children?: any[] }, condition: (node: typeof obj) => boolean) => {
     if(condition(obj)) {
       return obj

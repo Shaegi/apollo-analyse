@@ -11,7 +11,7 @@ export type Tab = {
 type WrapperProps = {}
 
 const Wrapper = styled.ul<WrapperProps>`
-    ul {
+    > ul {
         display: flex;
         margin-bottom: ${p => p.theme.size.xs};
         li  {

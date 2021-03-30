@@ -41,7 +41,6 @@ const Wrapper = styled.main`
 export type DashboardProps = InferGetStaticPropsType<typeof getStaticProps>
 
 function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(props)
   const { tracingInfos, errorCount } = props
   return (
       <Wrapper>
