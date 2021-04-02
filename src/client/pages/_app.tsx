@@ -17,6 +17,16 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+
+    button {
+      cursor:pointer;
+      background: none;
+      border: none;
+
+      &.disabled {
+        color: gray;
+      }
+    }
 `
 
 const theme = {
@@ -30,8 +40,8 @@ const theme = {
     xs: '8px',
     s: '12px',
     m: '16px',
-    l: '24px'
-  }
+    l: '24px',
+  },
 }
 
 export type Theme = typeof theme
@@ -39,12 +49,15 @@ export type Theme = typeof theme
 export default function App({ Component, pageProps }) {
   return (
     <>
-    <Head>
+      <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet" />
-    </Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
