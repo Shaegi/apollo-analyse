@@ -27,12 +27,10 @@ export type ResolverInfoProps = {
 
 const ResolverInfo: React.FC<ResolverInfoProps> = (props) => {
   const { resolvers } = props
-  console.log(resolvers)
   const resolverTree = useMemo(() => {
     const result = []
     resolvers.forEach((resolver, resolverIndex) => {
       let currentPathParent = null
-      debugger
 
       let pushed = false
       resolver.path.forEach((path, index, arr) => {
@@ -63,14 +61,6 @@ const ResolverInfo: React.FC<ResolverInfoProps> = (props) => {
               currentPathParent = parent
             }
           } else if (!currentPathParent) {
-            console.log(
-              'Push root',
-              path,
-              resolver,
-              cloneDeep(result),
-              cloneDeep(currentPathParent)
-            )
-
             // if resolved correctly this it should be a root resolver
             result.push(createNewEntry(resolver))
           } else {

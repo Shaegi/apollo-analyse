@@ -85,8 +85,6 @@ const resolvers = {
       },
       randomAmountOfBooks: () => {
         const booksCount = (Math.floor(Math.random() * books.length) + 1) +1 
-        const result = cloneDeep(books).slice(0, booksCount)
-        console.log(result.length)
         return cloneDeep(books).slice(0, booksCount)
       }
     },
