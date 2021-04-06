@@ -1,7 +1,16 @@
-const { query } = require('express');
 const startServer = require('./server')
+const willSendResponse  = require('./events/willSendResponse')
 
-const queryInfos = {};
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+// TODO: Create db if non exists
+const adapter = new FileSync('./db.json')
+const db = low(adapter)
+
+db.defaults({ operations: {} })
+  .write()
+
+const queryInfos = {}
 const errors = {}
 
 const operationsToSkip = ["IntrospectionQuery"];
@@ -10,7 +19,7 @@ module.exports = (options) => {
   return {
     serverWillStart() {
       console.log("Started");
-      startServer(queryInfos, errors)
+      startServer(queryInfos, errors, db)
     },
     requestDidStart(requestContext) {
 
@@ -22,25 +31,7 @@ module.exports = (options) => {
         validationDidStart(requestContext) {
           console.log("Validation started!");
         },
-        willSendResponse(requestContext) {
-          if (operationsToSkip.includes(requestContext.operationName)) {
-            return
-          }
-          console.log('send response', requestContext.operationName)
-
-          const tracingInfos = requestContext.response.extensions.tracing;
-          if (queryInfos[requestContext.queryHash]) {
-            const prev = queryInfos[requestContext.queryHash];
-            prev.count++;
-            prev.tracingInfos.push(tracingInfos);
-          } else {
-            queryInfos[requestContext.queryHash] = {
-              count: 1,
-              name: requestContext.operationName,
-              tracingInfos: [tracingInfos],
-            };
-          }
-        },
+        willSendResponse: willSendResponse({ queryInfos, operationsToSkip, db }),
         didEncounterErrors(requestContext) {
           console.log("encounter erro", requestContext);
           if(!errors[requestContext.queryHash]) {

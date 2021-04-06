@@ -3,9 +3,9 @@ const spawn  = require('cross-spawn');
 const path = require('path')
 
 
-const startServer = (queryInfos, errors) => {
+const startServer = (queryInfos, errors, db) => {
     const app = express()
-    console.log(__dirname, '..', 'client')
+    // Start Next.js client
     const ls = spawn('npm', ['run', 'dev'],{ cwd: path.resolve(__dirname, '..', 'client')});
     ls.stdout.on('data', (data) => {
         console.log(`Client: ${data}`);
@@ -13,12 +13,13 @@ const startServer = (queryInfos, errors) => {
     ls.on('error', console.log)
 
     app.get('/tracingInfos', (req, res) => {
-        console.log('???')
-        return res.send({ infos: queryInfos, errors: errors })
+        const operations = db.get('operations').value()
+        return res.send({ infos: operations, errors: errors })
     })
 
     app.get('/tracingInfos/:id', (req, res) => {
-        return res.send(JSON.stringify({ infos: queryInfos[req.params.id] || null, errors: errors[req.params.id] || null }))
+        const operations = db.get('operations').get(req.params.id)
+        return res.send(JSON.stringify({ infos: operations || null, errors: errors[req.params.id] || null }))
     })
 
     app.listen(5000, () => {

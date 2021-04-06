@@ -15,6 +15,7 @@ import {
 } from 'recharts'
 import Tabs from '../../../components/Tabs'
 import FlameChart from './FlameChart'
+import ResolverInfo from './ResolverInfo'
 
 type WrapperProps = {}
 
@@ -89,8 +90,10 @@ const PerOperation: React.FC<PerOperationProps> = (props) => {
     }
   }, [nextDisabled])
 
-  const selectedOperation = selectedGroup.operations[selectedOperationIndex]
+  const selectedOperation: TracingInfo['tracingInfos'][number] =
+    selectedGroup.operations[selectedOperationIndex]
 
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0)
   console.log(selectedOperation)
   return (
     <Wrapper>
@@ -127,15 +130,22 @@ const PerOperation: React.FC<PerOperationProps> = (props) => {
         <button onClick={handleNextOperation}>{'>'}</button>
       </div>
       <Tabs
-        selectedIndex={0}
+        selectedIndex={selectedTabIndex}
         tabs={[
+          {
+            id: 'resolver',
+            label: 'Resolver',
+            content: (
+              <ResolverInfo resolvers={selectedOperation.execution.resolvers} />
+            ),
+          },
           {
             id: 'flameChart',
             label: 'Flamechart',
             content: <FlameChart tracingInfo={selectedOperation.execution} />,
           },
         ]}
-        onSelect={() => null}
+        onSelect={(info, index) => setSelectedTabIndex(index)}
       />
     </Wrapper>
   )

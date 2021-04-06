@@ -1,0 +1,235 @@
+{
+  "operations": {
+    "bcaec2d2f18ce9e0603d33cd2ef47a6ab192bc70b11729e83005a562f7cd51fb": {
+      "count": 2,
+      "name": "RandomAmount2",
+      "tracingInfos": [
+        {
+          "version": 1,
+          "startTime": "2021-04-06T20:10:42.587Z",
+          "endTime": "2021-04-06T20:10:43.598Z",
+          "duration": 1010945100,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 2780600,
+                "duration": 2137400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 5008700,
+                "duration": 89800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 5113200,
+                "duration": 1005439600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 6515300,
+                "duration": 26200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 6554200,
+                "duration": 1004261700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1010648100,
+                "duration": 45300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1010836300,
+                "duration": 10300
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-06T20:11:40.378Z",
+          "endTime": "2021-04-06T20:11:41.386Z",
+          "duration": 1007953700,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 579200,
+                "duration": 810500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1423100,
+                "duration": 10400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1439600,
+                "duration": 1006318300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2101700,
+                "duration": 10200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 2118200,
+                "duration": 1005734600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2726800,
+                "duration": 11700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 2741600,
+                "duration": 1005155400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007805800,
+                "duration": 20300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007860600,
+                "duration": 5800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007904000,
+                "duration": 5300
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

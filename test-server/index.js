@@ -1,5 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server');
 const casual = require('casual')
+const { cloneDeep } = require('lodash')
 
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
@@ -35,6 +36,7 @@ const typeDefs = gql`
     books: [Book]
     maybeError: [ErrorBook]
     longRunningQuery: [Book]
+    randomAmountOfBooks: [Book]
   }
 `;
 
@@ -81,6 +83,12 @@ const resolvers = {
       maybeError: () => {
         return casual.boolean ? new Error('Woops you lost the coin-flip') : books
       },
+      randomAmountOfBooks: () => {
+        const booksCount = (Math.floor(Math.random() * books.length) + 1) +1 
+        const result = cloneDeep(books).slice(0, booksCount)
+        console.log(result.length)
+        return cloneDeep(books).slice(0, booksCount)
+      }
     },
     ErrorBook: {
       author: parent => {

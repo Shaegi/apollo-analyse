@@ -13,6 +13,7 @@ export type TracingInfo = {
                     path: (string | number)[]
                     duration: number, 
                     fieldName: string 
+                    returnType: string
                     startOffset: number
                     parentType: string
                 }[] 

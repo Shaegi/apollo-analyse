@@ -69,7 +69,9 @@ const OperationProps: React.FC<OperationProps> = (props) => {
           {
             label: 'Overview',
             content: (
-              <AveragedOperation tracingInfos={res.infos.tracingInfos} />
+              <>
+                <AveragedOperation tracingInfos={res.infos.tracingInfos} />
+              </>
             ),
             id: 'averagedOperation',
           },
