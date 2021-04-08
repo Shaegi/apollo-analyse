@@ -1,5 +1,3 @@
-
-
 module.exports = ({ queryInfos, operationsToSkip, db }) => (requestContext) => {
     if (operationsToSkip.includes(requestContext.operationName)) {
         return

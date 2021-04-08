@@ -1,7 +1,6 @@
 const express = require('express')
-const spawn  = require('cross-spawn');
+const spawn  = require('cross-spawn')
 const path = require('path')
-
 
 const startServer = (queryInfos, errors, db) => {
     const app = express()

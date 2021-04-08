@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require('apollo-server');
+const { ApolloServer, gql } = require('apollo-server')
 const casual = require('casual')
 const { cloneDeep } = require('lodash')
 
