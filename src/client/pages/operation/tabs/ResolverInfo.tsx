@@ -43,7 +43,7 @@ const ResolverInfo: React.FC<ResolverInfoProps> = (props) => {
         const createNewEntry = (resolver) => ({
           fields: [],
           children: [],
-          ...resolver,
+          ...resolver
         })
 
         if (typeof path === 'string') {
@@ -51,9 +51,8 @@ const ResolverInfo: React.FC<ResolverInfoProps> = (props) => {
           const parent =
             currentPathParent?.fieldName === path
               ? currentPathParent
-              : currentPathParent?.fields?.find(
-                  (node) => node.fieldName === path
-                ) || result.find((node) => node.fieldName === path)
+              : currentPathParent?.fields?.find((node) => node.fieldName === path) ||
+                result.find((node) => node.fieldName === path)
           if (parent) {
             if (isLastPath) {
               parent.fields.push(createNewEntry(resolver))
@@ -67,7 +66,7 @@ const ResolverInfo: React.FC<ResolverInfoProps> = (props) => {
             currentPathParent.fields.push({
               ...resolver,
               fields: [],
-              children: [],
+              children: []
             })
           }
         } else if (typeof path === 'number') {
@@ -80,7 +79,7 @@ const ResolverInfo: React.FC<ResolverInfoProps> = (props) => {
             currentPathParent?.children.push(
               createNewEntry({
                 name: resolver.parentType,
-                fields: [createNewEntry(resolver)],
+                fields: [createNewEntry(resolver)]
               })
             )
           }
@@ -91,25 +90,17 @@ const ResolverInfo: React.FC<ResolverInfoProps> = (props) => {
   }, [resolvers])
 
   const averageDuration = useMemo(() => {
-    const totalDuration = resolvers.reduce(
-      (acc, curr) => acc + curr.duration,
-      0
-    )
+    const totalDuration = resolvers.reduce((acc, curr) => acc + curr.duration, 0)
     const totalResolvers = resolvers.length
 
     return totalDuration / totalResolvers
   }, [resolvers])
 
   const renderChildren = (node: OperationNode, level = 0) => {
-    const percentageDifferenceToAverage =
-      ((node.duration - averageDuration) / node.duration) * 100
+    const percentageDifferenceToAverage = ((node.duration - averageDuration) / node.duration) * 100
     console.log(node, percentageDifferenceToAverage, averageDuration)
     return (
-      <div
-        key={node.fieldName || node.name}
-        className="resolver-wrapper"
-        style={{ marginLeft: level * 20 }}
-      >
+      <div key={node.fieldName || node.name} className="resolver-wrapper" style={{ marginLeft: level * 20 }}>
         <div className="content">
           <span className="title">
             <h4>{node.fieldName || node.name}</h4>
@@ -119,12 +110,8 @@ const ResolverInfo: React.FC<ResolverInfoProps> = (props) => {
             {node.duration && <div>{formatNStoMsString(node.duration)}</div>}
           </span>
         </div>
-        {node.fields && (
-          <div>{node.fields.map((v) => renderChildren(v, level))}</div>
-        )}
-        {node.children && (
-          <div>{node.children.map((v) => renderChildren(v, level + 1))}</div>
-        )}
+        {node.fields && <div>{node.fields.map((v) => renderChildren(v, level))}</div>}
+        {node.children && <div>{node.children.map((v) => renderChildren(v, level + 1))}</div>}
       </div>
     )
   }

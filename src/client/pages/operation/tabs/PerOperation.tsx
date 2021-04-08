@@ -3,16 +3,7 @@ import styled from 'styled-components'
 import { TracingInfo } from '../../../types/TracingInfo'
 import { formatNStoMsString } from '../../../utils'
 import { geClosestNumber } from './utils'
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Cell,
-  Legend,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts'
+import { Bar, BarChart, CartesianGrid, Cell, Legend, Tooltip, XAxis, YAxis } from 'recharts'
 import Tabs from '../../../components/Tabs'
 import FlameChart from './FlameChart'
 import ResolverInfo from './ResolverInfo'
@@ -42,7 +33,7 @@ const PerOperation: React.FC<PerOperationProps> = (props) => {
         startRange: formatNStoMsString(highestDuration * (i / 100)),
         endRange: formatNStoMsString(highestDuration * (i + groupGap / 100)),
         operations: [],
-        operationsCount: 0,
+        operationsCount: 0
       })
     }
 
@@ -62,16 +53,11 @@ const PerOperation: React.FC<PerOperationProps> = (props) => {
   }, [])
 
   const [selectedGroup, setSelectedGroup] = useState(
-    groups.reduce(
-      (acc, curr) =>
-        !acc || acc.operations.length < curr.operations.length ? curr : acc,
-      null
-    )
+    groups.reduce((acc, curr) => (!acc || acc.operations.length < curr.operations.length ? curr : acc), null)
   )
   const [selectedOperationIndex, setSelectedOperationIndex] = useState(0)
 
-  const nextDisabled =
-    selectedOperationIndex === selectedGroup.operations.length - 1
+  const nextDisabled = selectedOperationIndex === selectedGroup.operations.length - 1
   const prevDisabled = selectedOperationIndex === 0
 
   const handlePreviousOperation = useCallback(() => {
@@ -90,8 +76,7 @@ const PerOperation: React.FC<PerOperationProps> = (props) => {
     }
   }, [nextDisabled])
 
-  const selectedOperation: TracingInfo['tracingInfos'][number] =
-    selectedGroup.operations[selectedOperationIndex]
+  const selectedOperation: TracingInfo['tracingInfos'][number] = selectedGroup.operations[selectedOperationIndex]
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(0)
   console.log(selectedOperation)
@@ -116,9 +101,7 @@ const PerOperation: React.FC<PerOperationProps> = (props) => {
           {groups.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
-              fill={
-                entry.percentage === selectedGroup.percentage ? 'red' : 'green'
-              }
+              fill={entry.percentage === selectedGroup.percentage ? 'red' : 'green'}
               strokeWidth={index === 2 ? 4 : 1}
             />
           ))}
@@ -135,15 +118,13 @@ const PerOperation: React.FC<PerOperationProps> = (props) => {
           {
             id: 'resolver',
             label: 'Resolver',
-            content: (
-              <ResolverInfo resolvers={selectedOperation.execution.resolvers} />
-            ),
+            content: <ResolverInfo resolvers={selectedOperation.execution.resolvers} />
           },
           {
             id: 'flameChart',
             label: 'Flamechart',
-            content: <FlameChart tracingInfo={selectedOperation.execution} />,
-          },
+            content: <FlameChart tracingInfo={selectedOperation.execution} />
+          }
         ]}
         onSelect={(info, index) => setSelectedTabIndex(index)}
       />

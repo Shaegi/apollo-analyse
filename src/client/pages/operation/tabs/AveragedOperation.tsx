@@ -31,9 +31,7 @@ const AveragedOperation: React.FC<AveragedOperationProps> = (props) => {
           const child =
             currentPathParent?.fieldName === path
               ? currentPathParent
-              : currentPathParent?.children?.find(
-                  (node) => node.fieldName === path
-                )
+              : currentPathParent?.children?.find((node) => node.fieldName === path)
           if (child) {
             if (index === arr.length - 1) {
               child.totalExecutionTime += resolver.duration
@@ -47,7 +45,7 @@ const AveragedOperation: React.FC<AveragedOperationProps> = (props) => {
                 acc.push({
                   ...resolver,
                   totalExecutionTime: resolver.duration,
-                  totalExecutions: 1,
+                  totalExecutions: 1
                 })
               } else {
                 if (currentPathParent && !currentPathParent?.children) {
@@ -56,7 +54,7 @@ const AveragedOperation: React.FC<AveragedOperationProps> = (props) => {
                 currentPathParent.children.push({
                   ...resolver,
                   totalExecutions: 1,
-                  totalExecutionTime: resolver.duration,
+                  totalExecutionTime: resolver.duration
                 })
               }
             } else {
@@ -64,7 +62,7 @@ const AveragedOperation: React.FC<AveragedOperationProps> = (props) => {
                 acc.push({
                   ...resolver,
                   totalExecutionTime: resolver.duration,
-                  totalExecutions: 1,
+                  totalExecutions: 1
                 })
               }
             }
@@ -79,14 +77,8 @@ const AveragedOperation: React.FC<AveragedOperationProps> = (props) => {
     return (
       <div key={node.fieldName || node.name} style={{ marginLeft: level * 20 }}>
         <h4>{node.fieldName || node.name}</h4>
-        {node.totalExecutionTime && (
-          <div>
-            {convertNSToMs(node.totalExecutionTime / node.totalExecutions)}ms
-          </div>
-        )}
-        {node.children && (
-          <div>{node.children.map((v) => renderChildren(v, level + 1))}</div>
-        )}
+        {node.totalExecutionTime && <div>{convertNSToMs(node.totalExecutionTime / node.totalExecutions)}ms</div>}
+        {node.children && <div>{node.children.map((v) => renderChildren(v, level + 1))}</div>}
       </div>
     )
   }

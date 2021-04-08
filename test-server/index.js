@@ -14,7 +14,7 @@ const typeDefs = gql`
     author: Author
   }
 
-  type Author  {
+  type Author {
     name: String
     books: [Book]
   }
@@ -38,85 +38,87 @@ const typeDefs = gql`
     longRunningQuery: [Book]
     randomAmountOfBooks: [Book]
   }
-`;
+`
 
 const books = [
-    {
-      title: 'The Awakening',
-      author: {name: 'Kate Chopin'},
-    },
-    {
-      title: 'The Sleep',
-      author: {name: 'Kate Chopin2'},
-    },
-    {
-      title: 'City of Glass',
-      author: {
-        name: 'Paul Auster',
-        books: [
-          {
-            title: 'City of Glass'
-          },
-          {
-            title: 'City of Grass'
-          },
-          {
-            title: 'City of Gas'
-          }
-        ]
-      },
-    },
-  ];
+  {
+    title: 'The Awakening',
+    author: { name: 'Kate Chopin' }
+  },
+  {
+    title: 'The Sleep',
+    author: { name: 'Kate Chopin2' }
+  },
+  {
+    title: 'City of Glass',
+    author: {
+      name: 'Paul Auster',
+      books: [
+        {
+          title: 'City of Glass'
+        },
+        {
+          title: 'City of Grass'
+        },
+        {
+          title: 'City of Gas'
+        }
+      ]
+    }
+  }
+]
 
-  // Resolvers define the technique for fetching the types defined in the
+// Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
-    Query: {
-      books: () => books,
-      longRunningQuery: () => {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(books)
-          }, (Math.floor(Math.random() * 6) + 1) * 1000)
-        })
-      },
-      maybeError: () => {
-        return casual.boolean ? new Error('Woops you lost the coin-flip') : books
-      },
-      randomAmountOfBooks: () => {
-        const booksCount = (Math.floor(Math.random() * books.length) + 1) +1 
-        return cloneDeep(books).slice(0, booksCount)
-      }
+  Query: {
+    books: () => books,
+    longRunningQuery: () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(books)
+        }, (Math.floor(Math.random() * 6) + 1) * 1000)
+      })
     },
-    ErrorBook: {
-      author: parent => {
-        if(casual.boolean) {
-          return parent.author
-        } else {
-          return new Error('Error on deeper Level')
-        }
-      }
+    maybeError: () => {
+      return casual.boolean ? new Error('Woops you lost the coin-flip') : books
     },
-    Book: {
-      author: (parent) => {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(parent.author)
-          }, 1000)
-        })
+    randomAmountOfBooks: () => {
+      const booksCount = Math.floor(Math.random() * books.length) + 1 + 1
+      return cloneDeep(books).slice(0, booksCount)
+    }
+  },
+  ErrorBook: {
+    author: (parent) => {
+      if (casual.boolean) {
+        return parent.author
+      } else {
+        return new Error('Error on deeper Level')
       }
     }
-  };
+  },
+  Book: {
+    author: (parent) => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(parent.author)
+        }, 1000)
+      })
+    }
+  }
+}
 
-  console.log('??',process.cwd)
-  // The ApolloServer constructor requires two parameters: your schema
+console.log('??', process.cwd)
+// The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
-const server = new ApolloServer({ typeDefs, resolvers, tracing: true, plugins: [
-    require(`../src/middleware/index.js`)
-] });
-
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  tracing: true,
+  plugins: [require(`../src/middleware/index.js`)]
+})
 
 // The `listen` method launches a web server.
 server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
-});
+  console.log(`🚀  Server ready at ${url}`)
+})

@@ -16,5 +16,14 @@
     "graphql": "^15.5.0",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.7"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 2,
+    "endOfLine": "auto",
+    "trailingComma": "none",
+    "quoteProps": "consistent"
   }
 }

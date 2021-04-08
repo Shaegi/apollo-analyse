@@ -4,7 +4,6 @@ import TextWidget from '../components/TextWidget'
 import { ErrorInfo, TracingInfo } from '../types/TracingInfo'
 import { getAverageExecutionTimeInMs } from '../utils'
 
-
 const Wrapper = styled.main`
   h1 {
     padding-bottom: 24px;
@@ -12,7 +11,7 @@ const Wrapper = styled.main`
   padding: 16px;
   ul {
     gap: 8px;
-    display: flex; 
+    display: flex;
   }
 
   ul.widget-list {
@@ -43,41 +42,36 @@ export type DashboardProps = InferGetStaticPropsType<typeof getStaticProps>
 function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const { tracingInfos, errorCount } = props
   return (
-      <Wrapper>
-        <h1>Dashboard</h1>
-        <ul className='widget-list'>
-          <li>
-            <TextWidget 
-              error={errorCount > 0}
-              success={errorCount === 0}
-              value={errorCount}
-              label={'Errors'}
-            />
-          </li>
-          <li>
-            <TextWidget 
-              value={Object.values(tracingInfos).reduce((acc, curr) => acc + curr.count, 0)}
-              label={'Total Operations'}
-            />
-          </li>
-        </ul>
-        <ul className='operation-list'>
-        {Object.keys(tracingInfos).map(key => {
+    <Wrapper>
+      <h1>Dashboard</h1>
+      <ul className="widget-list">
+        <li>
+          <TextWidget error={errorCount > 0} success={errorCount === 0} value={errorCount} label={'Errors'} />
+        </li>
+        <li>
+          <TextWidget
+            value={Object.values(tracingInfos).reduce((acc, curr) => acc + curr.count, 0)}
+            label={'Total Operations'}
+          />
+        </li>
+      </ul>
+      <ul className="operation-list">
+        {Object.keys(tracingInfos).map((key) => {
           const info = tracingInfos[key]
-          return <li key={key}>
+          return (
+            <li key={key}>
               <a href={'/operation/' + key}>
-                <h4>
-                    {info.name}
-                </h4>
+                <h4>{info.name}</h4>
                 <div>
                   <span>Count: {info.count}</span>
                   <div>Average: {getAverageExecutionTimeInMs(info)}ms</div>
                 </div>
               </a>
             </li>
+          )
         })}
-        </ul>
-      </Wrapper>
+      </ul>
+    </Wrapper>
   )
 }
 
@@ -85,14 +79,19 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
 // It won't be called on client-side, so you can even do
 // direct database queries. See the "Technical details" section.
 export async function getStaticProps() {
-  const { infos: tracingInfos, errors }: { infos: Record<string, TracingInfo>, errors: Record<string, ErrorInfo>} = await (await fetch('http://localhost:5000/tracingInfos')).json()
+  const {
+    infos: tracingInfos,
+    errors
+  }: { infos: Record<string, TracingInfo>; errors: Record<string, ErrorInfo> } = await (
+    await fetch('http://localhost:5000/tracingInfos')
+  ).json()
   // By returning { props: posts }, the Blog component
   // will receive `posts` as a prop at build time
   return {
     props: {
       tracingInfos,
-      errorCount: Object.values(errors).reduce((acc, curr) => acc + (curr.errors?.length || 0) ,0)
-    },
+      errorCount: Object.values(errors).reduce((acc, curr) => acc + (curr.errors?.length || 0), 0)
+    }
   }
 }
 
