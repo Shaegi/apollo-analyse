@@ -2,7 +2,6 @@ import { InferGetStaticPropsType } from 'next'
 import styled, { useTheme } from 'styled-components'
 import TextWidget from '../components/TextWidget'
 import { ErrorInfo, TracingInfo } from '../types/TracingInfo'
-import { getAverageExecutionTimeInMs } from '../utils'
 import VerticalTabs from '../components/VerticalTabs'
 import { useMemo, useState } from 'react'
 import MainNav from '../components/MainNav'
@@ -43,11 +42,7 @@ type IntervalPoint<T = Record<string, any>> = {
   values: T[]
 }
 
-const getIntervalPoints = <T extends any>(
-  start: Date,
-  end: Date,
-  count: number = 15
-): IntervalPoint[] => {
+const getIntervalPoints = <T extends any>(start: Date, end: Date, count: number = 15): IntervalPoint[] => {
   const startTime = start.getTime()
   const endTime = end.getTime()
   const result: IntervalPoint<T>[] = []
@@ -56,7 +51,7 @@ const getIntervalPoints = <T extends any>(
     result.push({
       start: startTime + i * multiplier,
       end: startTime + (i + 1) * multiplier,
-      values: [],
+      values: []
     })
   }
   return result
@@ -71,28 +66,28 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const rpmData = [
     {
       time: 0,
-      rpm: 0,
+      rpm: 0
     },
     {
       time: 2000,
-      rpm: 30,
+      rpm: 30
     },
     {
       time: 3000,
-      rpm: 0,
+      rpm: 0
     },
     {
       time: 4000,
-      rpm: 32,
+      rpm: 32
     },
     {
       time: 4500,
-      rpm: 10,
+      rpm: 10
     },
     {
       time: 5000,
-      rpm: 100,
-    },
+      rpm: 100
+    }
   ]
 
   const intervals = [
@@ -100,14 +95,14 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
       id: 'last-24-hours',
       label: 'Last 24 hours',
       start: getLastDay(),
-      end: new Date(),
+      end: new Date()
     },
     {
       id: 'last-hour',
       label: 'Last Hour',
       start: getLastHour(),
-      end: new Date(),
-    },
+      end: new Date()
+    }
   ]
   const [selectedInterval, setSelectedInterval] = useState(intervals[1])
   const theme: any = useTheme()
@@ -115,18 +110,15 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const intl = useIntl()
 
   const operationsInInterval = useMemo(() => {
-    const intervalPoints = getIntervalPoints<
-      TracingInfo['tracingInfos'][number]
-    >(selectedInterval.start, selectedInterval.end, 10)
-
-    const minutesPerInterval = moment(intervalPoints[0].end).diff(
-      intervalPoints[0].start,
-      'minute'
+    const intervalPoints = getIntervalPoints<TracingInfo['tracingInfos'][number]>(
+      selectedInterval.start,
+      selectedInterval.end,
+      10
     )
 
-    const allOperations: TracingInfo['tracingInfos'] = Object.values(
-      tracingInfos
-    ).reduce((acc, curr) => {
+    const minutesPerInterval = moment(intervalPoints[0].end).diff(intervalPoints[0].start, 'minute')
+
+    const allOperations: TracingInfo['tracingInfos'] = Object.values(tracingInfos).reduce((acc, curr) => {
       acc.push(...curr.tracingInfos)
       return acc
     }, [])
@@ -148,10 +140,8 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
         return {
           ...interval,
           rpm: interval.values.length / minutesPerInterval,
-          count:
-            Math.round((interval.values.length / minutesPerInterval) * 1000) /
-            1000,
-          start: formattedLabel,
+          count: Math.round((interval.values.length / minutesPerInterval) * 1000) / 1000,
+          start: formattedLabel
         }
       })
   }, [selectedInterval.id])
@@ -166,20 +156,12 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
           </li>
           <li>
             <TextWidget
-              value={Object.values(tracingInfos).reduce(
-                (acc, curr) => acc + curr.count,
-                0
-              )}
+              value={Object.values(tracingInfos).reduce((acc, curr) => acc + curr.count, 0)}
               label={'Total Operations'}
             />
           </li>
           <li>
-            <TextWidget
-              error={errorCount > 0}
-              success={errorCount === 0}
-              value={errorCount}
-              label={'Errors'}
-            />
+            <TextWidget error={errorCount > 0} success={errorCount === 0} value={errorCount} label={'Errors'} />
           </li>
         </ul>
         <div>p95 Service average latency</div>
@@ -192,9 +174,7 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
           value={selectedInterval.id}
           onChange={(e) => {
             console.log(e)
-            setSelectedInterval(
-              intervals.find((interval) => interval.id === e.target.value)
-            )
+            setSelectedInterval(intervals.find((interval) => interval.id === e.target.value))
           }}
         >
           {intervals.map((interval) => {
@@ -216,20 +196,11 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
           <YAxis
             dataKey={'count'}
             label="RPM"
-            domain={[
-              'dataMin',
-              (dataMax: number) =>
-                dataMax ? Math.max(dataMax, dataMax * 1.5) : 3,
-            ]}
+            domain={['dataMin', (dataMax: number) => (dataMax ? Math.max(dataMax, dataMax * 1.5) : 3)]}
           />
 
           <Tooltip />
-          <Line
-            type="linear"
-            connectNulls
-            dataKey="count"
-            stroke={theme.color.primary}
-          />
+          <Line type="linear" connectNulls dataKey="count" stroke={theme.color.primary} />
         </LineChart>
       </Wrapper>
     </MainNav>
@@ -242,7 +213,7 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
 export async function getStaticProps() {
   const {
     infos: tracingInfos,
-    errors,
+    errors
   }: {
     infos: Record<string, TracingInfo>
     errors: Record<string, ErrorInfo>
@@ -252,12 +223,7 @@ export async function getStaticProps() {
   return {
     props: {
       tracingInfos,
-      errorCount: Object.values(errors).reduce(
-        (acc, curr) => acc + (curr.errors?.length || 0),
-        0
-      ),
-    },
+      errorCount: Object.values(errors).reduce((acc, curr) => acc + (curr.errors?.length || 0), 0)
+    }
   }
 }
-
-export default Dashboard

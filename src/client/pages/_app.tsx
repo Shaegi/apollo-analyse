@@ -38,15 +38,15 @@ const theme = {
   color: {
     primary: '#0070f3',
     error: '#f30014',
-    success: '#398d36',
+    success: '#398d36'
   },
   size: {
     xxs: '4px',
     xs: '8px',
     s: '12px',
     m: '16px',
-    l: '24px',
-  },
+    l: '24px'
+  }
 }
 
 export type Theme = typeof theme
@@ -58,10 +58,7 @@ export default function App({ Component, pageProps }) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet" />
       </Head>
       <GlobalStyle />
       <IntlProvider locale="en-GB">

@@ -56,12 +56,7 @@ const OperationProps: React.FC<OperationProps> = (props) => {
       <div className="widgets">
         <TextWidget label="Count" value={count} />
         <TextWidget label="Average Time" value={averageExecutionTime + 'ms'} />
-        <TextWidget
-          label="Errors"
-          value={errorCount}
-          error={errorCount > 0}
-          success={errorCount === 0}
-        />
+        <TextWidget label="Errors" value={errorCount} error={errorCount > 0} success={errorCount === 0} />
       </div>
 
       <Tabs
@@ -73,25 +68,23 @@ const OperationProps: React.FC<OperationProps> = (props) => {
                 <AveragedOperation tracingInfos={res.infos.tracingInfos} />
               </>
             ),
-            id: 'averagedOperation',
+            id: 'averagedOperation'
           },
           {
             label: 'Per Operation',
             id: 'perOoperation',
-            content: <PerOperation tracingInfo={res.infos} />,
+            content: <PerOperation tracingInfo={res.infos} />
           },
           {
             label: 'Resolver Flamechart',
-            content: (
-              <FlameChart tracingInfo={res.infos.tracingInfos[0].execution} />
-            ),
-            id: 'averagedOperation',
+            content: <FlameChart tracingInfo={res.infos.tracingInfos[0].execution} />,
+            id: 'averagedOperation'
           },
           {
             label: 'Errors',
             content: <ErrorDetails errors={errors} />,
-            id: 'errors',
-          },
+            id: 'errors'
+          }
         ]}
         selectedIndex={activeTab}
         onSelect={handleSwitchTabs}
@@ -113,8 +106,8 @@ export async function getServerSideProps({ params }) {
       errors: res?.errors?.errors || null,
       count: res.infos.count,
       tracingInfos: res.infos.tracingInfos,
-      averageExecutionTime: getAverageExecutionTimeInMs(res.infos),
-    },
+      averageExecutionTime: getAverageExecutionTimeInMs(res.infos)
+    }
   }
 }
 

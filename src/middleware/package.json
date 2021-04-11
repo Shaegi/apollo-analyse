@@ -11,7 +11,16 @@
   "license": "MIT",
   "dependencies": {
     "cross-spawn": "^7.0.3",
-    "lowdb": "^1.0.0",
-    "path": "^0.12.7"
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 2,
+    "endOfLine": "auto",
+    "trailingComma": "none",
+    "quoteProps": "consistent"
   }
 }

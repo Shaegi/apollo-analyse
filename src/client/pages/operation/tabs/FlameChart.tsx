@@ -66,9 +66,7 @@ const FlameChart: React.FC<FlameChartProps> = (props) => {
                   return v
                 })}
               </span>
-              <span className="duration">
-                {formatNStoMsString(resolver.duration)}
-              </span>
+              <span className="duration">{formatNStoMsString(resolver.duration)}</span>
             </li>
           )
         })}
