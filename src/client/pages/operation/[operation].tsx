@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next'
 import { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
-import Tabs, { TabsProps } from '../../components/Tabs'
+import Tabs, { TabsProps } from '../../components/HorizontalTabs'
 import TextWidget from '../../components/TextWidget'
 import { ErrorInfo, Errors, TracingInfo } from '../../types/TracingInfo'
 import { formatNStoMsString, getAverageExecutionTimeInMs } from '../../utils'

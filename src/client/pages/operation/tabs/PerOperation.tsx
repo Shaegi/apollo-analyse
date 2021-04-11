@@ -13,7 +13,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import Tabs from '../../../components/Tabs'
+import Tabs from '../../../components/HorizontalTabs'
 import FlameChart from './FlameChart'
 import ResolverInfo from './ResolverInfo'
 

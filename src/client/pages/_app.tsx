@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { IntlProvider } from 'react-intl'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -12,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
         margin-inline-end: 0px;
         padding-inline-start: 0;
     }
+
+    h1 {
+    padding-bottom: 24px;
+  }
     body {
         margin: 0;
         padding: 0;
@@ -59,9 +64,11 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <IntlProvider locale="en-GB">
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </IntlProvider>
     </>
   )
 }
