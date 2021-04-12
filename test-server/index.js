@@ -29,6 +29,10 @@ const typeDefs = gql`
     books: [ErrorBook]
   }
 
+  input BookInput {
+    name: String
+  }
+
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each. In this
   # case, the "books" query returns an array of zero or more Books (defined above).
@@ -37,6 +41,10 @@ const typeDefs = gql`
     maybeError: [ErrorBook]
     longRunningQuery: [Book]
     randomAmountOfBooks: [Book]
+  }
+
+  type Mutation {
+    addBook (input: BookInput): [Book]
   }
 `
 
@@ -87,6 +95,9 @@ const resolvers = {
       const booksCount = Math.floor(Math.random() * books.length) + 1 + 1
       return cloneDeep(books).slice(0, booksCount)
     }
+  },
+  Mutation: {
+    addBook: () => books
   },
   ErrorBook: {
     author: (parent) => {

@@ -12,8 +12,11 @@ type WrapperProps = {}
 
 const Wrapper = styled.ul<WrapperProps>`
   display: flex;
+
   > .tab-content {
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
   > ul {
     flex-direction: column;
@@ -65,9 +68,7 @@ const VerticalTabs: React.FC<TabsProps> = (props) => {
           )
         })}
       </ul>
-      {activeTab?.content && (
-        <div className="tab-content">{activeTab.content}</div>
-      )}
+      {activeTab?.content && <div className="tab-content">{activeTab.content}</div>}
     </Wrapper>
   )
 }

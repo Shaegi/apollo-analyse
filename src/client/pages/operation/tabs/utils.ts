@@ -23,3 +23,5 @@ export const geClosestNumber = (counts: number[], goal: number) => {
     return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev
   })
 }
+
+export const roundTo2Precision = (num: number) => Math.round(num * 1000) / 1000

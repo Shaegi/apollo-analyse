@@ -2,6 +2,7 @@ export type TracingInfo = {
   count: number
   name: string
   errors: number
+  type: 'query' | 'mutation'
   tracingInfos: {
     duration: number
     startTime: string

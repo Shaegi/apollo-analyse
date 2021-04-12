@@ -2,14 +2,12 @@ import { InferGetStaticPropsType } from 'next'
 import styled, { useTheme } from 'styled-components'
 import TextWidget from '../components/TextWidget'
 import { ErrorInfo, TracingInfo } from '../types/TracingInfo'
-import VerticalTabs from '../components/VerticalTabs'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import MainNav from '../components/MainNav'
-import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
+import { Area, Bar, BarChart, CartesianGrid, ComposedChart, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
 import { useIntl } from 'react-intl'
-import { isTypeOnlyImportOrExportDeclaration } from 'typescript'
 import moment from 'moment'
-import { Theme } from './_app'
+import { roundTo2Precision } from './operation/tabs/utils'
 
 const Wrapper = styled.main`
   padding: 16px;
@@ -25,14 +23,12 @@ const Wrapper = styled.main`
 const getLastDay = () => {
   let today = new Date()
   today.setHours(today.getHours() - 24)
-
   return today
 }
 
 const getLastHour = () => {
   let lastHour = new Date()
   lastHour.setHours(lastHour.getHours() - 1)
-
   return lastHour
 }
 
@@ -57,38 +53,25 @@ const getIntervalPoints = <T extends any>(start: Date, end: Date, count: number 
   return result
 }
 
-export type DashboardProps = InferGetStaticPropsType<typeof getStaticProps>
+export type DashboardProps = InferGetStaticPropsType<typeof getServerSideProps>
 
-function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
+function Dashboard(props: InferGetStaticPropsType<typeof getServerSideProps>) {
   const { tracingInfos, errorCount } = props
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const [width, setWidth] = useState(0)
 
-  const rpmData = [
-    {
-      time: 0,
-      rpm: 0
-    },
-    {
-      time: 2000,
-      rpm: 30
-    },
-    {
-      time: 3000,
-      rpm: 0
-    },
-    {
-      time: 4000,
-      rpm: 32
-    },
-    {
-      time: 4500,
-      rpm: 10
-    },
-    {
-      time: 5000,
-      rpm: 100
+  useEffect(() => {
+    const listener = () => {
+      if (wrapperRef.current) {
+        setWidth(wrapperRef.current?.clientWidth)
+      }
     }
-  ]
+    window.addEventListener('resize', listener)
+    listener()
+    return () => {
+      window.removeEventListener('resize', listener)
+    }
+  })
 
   const intervals = [
     {
@@ -113,13 +96,14 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
     const intervalPoints = getIntervalPoints<TracingInfo['tracingInfos'][number]>(
       selectedInterval.start,
       selectedInterval.end,
-      10
+      30
     )
 
     const minutesPerInterval = moment(intervalPoints[0].end).diff(intervalPoints[0].start, 'minute')
 
-    const allOperations: TracingInfo['tracingInfos'] = Object.values(tracingInfos).reduce((acc, curr) => {
-      acc.push(...curr.tracingInfos)
+    const allOperations: TracingInfo['tracingInfos'] = Object.keys(tracingInfos).reduce((acc, curr) => {
+      const infos = tracingInfos[curr]
+      acc.push(...infos.tracingInfos.map((v) => ({ ...v, parent: curr, type: infos.type })))
       return acc
     }, [])
 
@@ -137,10 +121,18 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
       .map((interval) => {
         const startDate = new Date(interval.start)
         const formattedLabel = intl.formatTime(startDate)
+        const queryCount = interval.values.reduce((acc, curr) => (curr.type === 'query' ? acc + 1 : acc), 0)
+        const mutationCount = interval.values.reduce((acc, curr) => (curr.type === 'mutation' ? acc + 1 : acc), 0)
+        const mutationRPM = roundTo2Precision(mutationCount / minutesPerInterval)
+        const queryRPM = roundTo2Precision(queryCount / minutesPerInterval)
         return {
           ...interval,
-          rpm: interval.values.length / minutesPerInterval,
-          count: Math.round((interval.values.length / minutesPerInterval) * 1000) / 1000,
+          count: interval.values.length,
+          mutationCount: mutationCount,
+          queryCount: queryCount,
+          rpm: roundTo2Precision(interval.values.length / minutesPerInterval),
+          queryRPM,
+          mutationRPM,
           start: formattedLabel
         }
       })
@@ -148,7 +140,7 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
 
   return (
     <MainNav index={0}>
-      <Wrapper>
+      <Wrapper ref={wrapperRef}>
         <h1>Dashboard</h1>
         <ul className="widget-list">
           <li>
@@ -185,23 +177,48 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
             )
           })}
         </select>
-        <LineChart
-          width={1500}
-          height={250}
-          data={operationsInInterval}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="start" />
-          <YAxis
-            dataKey={'count'}
-            label="RPM"
-            domain={['dataMin', (dataMax: number) => (dataMax ? Math.max(dataMax, dataMax * 1.5) : 3)]}
-          />
-
-          <Tooltip />
-          <Line type="linear" connectNulls dataKey="count" stroke={theme.color.primary} />
-        </LineChart>
+        <div>
+          <h2>RPM</h2>
+          <ComposedChart width={width - 32} height={250} data={operationsInInterval}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="start" domain={['dataMin', 'dataMax']} />
+            <YAxis dataKey={'rpm'} label="RPM" domain={['dataMin', (dataMax) => dataMax * 1.4]} />
+            <Tooltip />
+            <Line type="linear" connectNulls dataKey="rpm" stroke={theme.color.primary} name="Total" unit="rpm" />
+            <Area
+              type="linear"
+              connectNulls
+              dataKey="queryRPM"
+              stroke={theme.color.accent1}
+              unit="rpm"
+              name="Queries RPM"
+              fillOpacity={0.3}
+              fill={theme.color.accent1}
+            />
+            <Area
+              type="linear"
+              connectNulls
+              dataKey="mutationRPM"
+              stroke={theme.color.accent2}
+              fill={theme.color.accent2}
+              unit="rpm"
+              name="Mutations RPM"
+              fillOpacity={0.3}
+            />
+          </ComposedChart>
+          <h2>Total Operations</h2>
+          <BarChart width={width - 32} height={250} data={operationsInInterval}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="start" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="queryCount" fill={theme.color.accent1} stackId="a" name="Queries" />
+            <Bar dataKey="mutationCount" fill={theme.color.accent2} stackId="a" name="Mutations" />
+          </BarChart>
+        </div>
+        <div>
+          <h2>Top Operations</h2>
+        </div>
       </Wrapper>
     </MainNav>
   )
@@ -210,7 +227,7 @@ function Dashboard(props: InferGetStaticPropsType<typeof getStaticProps>) {
 // This function gets called at build time on server-side.
 // It won't be called on client-side, so you can even do
 // direct database queries. See the "Technical details" section.
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const {
     infos: tracingInfos,
     errors
@@ -227,3 +244,5 @@ export async function getStaticProps() {
     }
   }
 }
+
+export default Dashboard

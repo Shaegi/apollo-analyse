@@ -37,6 +37,8 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
   color: {
     primary: '#0070f3',
+    accent1: '#21D19F',
+    accent2: '#F75C03',
     error: '#f30014',
     success: '#398d36'
   },

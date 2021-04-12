@@ -14,6 +14,7 @@ module.exports = ({ queryInfos, operationsToSkip, db }) => (requestContext) => {
     } else {
       queryInfos[requestContext.queryHash] = {
         count: 1,
+        type: requestContext.operation.operation,
         name: requestContext.operationName,
         tracingInfos: [tracingInfos]
       }
