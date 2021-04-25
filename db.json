@@ -1,7 +1,7 @@
 {
   "operations": {
     "bcaec2d2f18ce9e0603d33cd2ef47a6ab192bc70b11729e83005a562f7cd51fb": {
-      "count": 61,
+      "count": 72,
       "name": "RandomAmount2",
       "type": "query",
       "tracingInfos": [
@@ -7252,6 +7252,1373 @@
                 "returnType": "String",
                 "startOffset": 1015862300,
                 "duration": 8400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:26:01.044Z",
+          "endTime": "2021-04-25T08:26:02.054Z",
+          "duration": 1010504900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 2195700,
+                "duration": 600200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2815300,
+                "duration": 8600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 2828100,
+                "duration": 1007356200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3863900,
+                "duration": 14500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 3885500,
+                "duration": 1006496300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4654800,
+                "duration": 7800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 4667300,
+                "duration": 1005764000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1010265400,
+                "duration": 26300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1010394500,
+                "duration": 6300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1010439400,
+                "duration": 4800
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:26:01.369Z",
+          "endTime": "2021-04-25T08:26:02.384Z",
+          "duration": 1014669800,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 537600,
+                "duration": 102100
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 657900,
+                "duration": 6400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 669400,
+                "duration": 1013777900
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1280900,
+                "duration": 6600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1292200,
+                "duration": 1013264500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1818800,
+                "duration": 6000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1829300,
+                "duration": 1012778700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1014503200,
+                "duration": 20500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1014566000,
+                "duration": 5400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1014618900,
+                "duration": 6400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:26:01.702Z",
+          "endTime": "2021-04-25T08:26:02.711Z",
+          "duration": 1009694200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 483100,
+                "duration": 85400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 584600,
+                "duration": 6400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 595700,
+                "duration": 1008916400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1161800,
+                "duration": 6400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1172700,
+                "duration": 1008466900
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1009570900,
+                "duration": 19600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1009648100,
+                "duration": 5000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T14:06:38.725Z",
+          "endTime": "2021-04-25T14:06:39.756Z",
+          "duration": 1031061400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 12345500,
+                "duration": 4340500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 16729700,
+                "duration": 267900
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 17017800,
+                "duration": 1013679100
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 19123600,
+                "duration": 14000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 19144600,
+                "duration": 1011717200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 20108800,
+                "duration": 10800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 20126200,
+                "duration": 1010794700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1030774700,
+                "duration": 22500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1030869700,
+                "duration": 6200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1030928400,
+                "duration": 6000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T14:06:39.066Z",
+          "endTime": "2021-04-25T14:06:40.074Z",
+          "duration": 1007639900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 910900,
+                "duration": 107500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1033700,
+                "duration": 9500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1046700,
+                "duration": 1006316800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1856000,
+                "duration": 9800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1869000,
+                "duration": 1005630800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2512000,
+                "duration": 9200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 2524200,
+                "duration": 1005051700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007431200,
+                "duration": 35600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007511500,
+                "duration": 22500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007582700,
+                "duration": 9600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T14:06:39.376Z",
+          "endTime": "2021-04-25T14:06:40.387Z",
+          "duration": 1010819500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 956600,
+                "duration": 102100
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1074800,
+                "duration": 8000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1086900,
+                "duration": 1009516700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2757800,
+                "duration": 9000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 2771300,
+                "duration": 1007953600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3508200,
+                "duration": 11400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 3524200,
+                "duration": 1007244800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1010669500,
+                "duration": 23700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1010731900,
+                "duration": 5100
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1010776300,
+                "duration": 4600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:12:01.491Z",
+          "endTime": "2021-04-25T16:12:02.493Z",
+          "duration": 1002686200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 492700,
+                "duration": 151800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 660700,
+                "duration": 8800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 672500,
+                "duration": 1001832300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1362400,
+                "duration": 6400
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1371600,
+                "duration": 1001257800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1002556100,
+                "duration": 30000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1002636600,
+                "duration": 4400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:40.340Z",
+          "endTime": "2021-04-25T16:19:41.353Z",
+          "duration": 1012681900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 495900,
+                "duration": 128600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 644400,
+                "duration": 7800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 655600,
+                "duration": 1011831000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1329800,
+                "duration": 5600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1337900,
+                "duration": 1011247900
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1957100,
+                "duration": 5300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1964800,
+                "duration": 1010660700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1012538700,
+                "duration": 18900
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1012591200,
+                "duration": 4200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1012630600,
+                "duration": 3700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:54.797Z",
+          "endTime": "2021-04-25T16:19:55.805Z",
+          "duration": 1007601500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 478900,
+                "duration": 96700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 592200,
+                "duration": 6200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 601600,
+                "duration": 1006814700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1282800,
+                "duration": 6600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1292200,
+                "duration": 1006215000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1953100,
+                "duration": 5800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1961200,
+                "duration": 1005585500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007456800,
+                "duration": 20100
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007513200,
+                "duration": 4600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1007552700,
+                "duration": 3700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:59.123Z",
+          "endTime": "2021-04-25T16:20:00.127Z",
+          "duration": 1003639100,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 483100,
+                "duration": 85600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 584100,
+                "duration": 6200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 593500,
+                "duration": 1002875600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1285900,
+                "duration": 6000
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1294500,
+                "duration": 1002265300
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1918600,
+                "duration": 5100
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1926100,
+                "duration": 1001669600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1003517000,
+                "duration": 20700
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1003565900,
+                "duration": 3800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1003600300,
+                "duration": 3400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:12.603Z",
+          "endTime": "2021-04-25T17:21:13.611Z",
+          "duration": 1008319600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "randomAmountOfBooks"
+                ],
+                "parentType": "Query",
+                "fieldName": "randomAmountOfBooks",
+                "returnType": "[Book]",
+                "startOffset": 489800,
+                "duration": 106600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 615800,
+                "duration": 7500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 627200,
+                "duration": 1007524200
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1310000,
+                "duration": 6600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1319500,
+                "duration": 1006910800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1991300,
+                "duration": 5500
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1999100,
+                "duration": 1006267600
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1008188900,
+                "duration": 19900
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1008235300,
+                "duration": 3800
+              },
+              {
+                "path": [
+                  "randomAmountOfBooks",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 1008271500,
+                "duration": 3500
               }
             ]
           }
@@ -16675,7 +18042,7 @@
       ]
     },
     "54f3c1eb3fd355779449fd34d4ae049d1c6b2fe6ebda0224c3090ec671eb1090": {
-      "count": 46,
+      "count": 50,
       "name": "Books2",
       "type": "query",
       "tracingInfos": [
@@ -22704,11 +24071,535 @@
               }
             ]
           }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:12:05.185Z",
+          "endTime": "2021-04-25T16:12:07.208Z",
+          "duration": 2022754800,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "longRunningQuery"
+                ],
+                "parentType": "Query",
+                "fieldName": "longRunningQuery",
+                "returnType": "[Book]",
+                "startOffset": 2608000,
+                "duration": 1015368000
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1018016200,
+                "duration": 21800
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1018041900,
+                "duration": 1004502700
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1018408100,
+                "duration": 6000
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1018416600,
+                "duration": 1004240800
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1018698400,
+                "duration": 5300
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 1018706000,
+                "duration": 1003994200
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 2022598100,
+                "duration": 27300
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 2022663000,
+                "duration": 5000
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 2022705300,
+                "duration": 3900
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:35.147Z",
+          "endTime": "2021-04-25T16:19:39.157Z",
+          "duration": 4010215500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "longRunningQuery"
+                ],
+                "parentType": "Query",
+                "fieldName": "longRunningQuery",
+                "returnType": "[Book]",
+                "startOffset": 502900,
+                "duration": 3008609700
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3009176300,
+                "duration": 19700
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 3009201200,
+                "duration": 1000816000
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3009579000,
+                "duration": 5900
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 3009588300,
+                "duration": 1000526600
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3009876500,
+                "duration": 4900
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 3009884700,
+                "duration": 1000273500
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 4010068600,
+                "duration": 18900
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 4010124700,
+                "duration": 4200
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 4010163100,
+                "duration": 4800
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:20:02.725Z",
+          "endTime": "2021-04-25T16:20:07.734Z",
+          "duration": 5009077500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "longRunningQuery"
+                ],
+                "parentType": "Query",
+                "fieldName": "longRunningQuery",
+                "returnType": "[Book]",
+                "startOffset": 579100,
+                "duration": 4000366900
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4001009400,
+                "duration": 22100
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 4001035400,
+                "duration": 1007848100
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4001400500,
+                "duration": 5600
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 4001408500,
+                "duration": 1007566800
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4001701500,
+                "duration": 4800
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 4001708500,
+                "duration": 1007310800
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 5008924700,
+                "duration": 24500
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 5008981200,
+                "duration": 3900
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 5009025700,
+                "duration": 4000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:14.981Z",
+          "endTime": "2021-04-25T17:21:19.994Z",
+          "duration": 5012408600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "longRunningQuery"
+                ],
+                "parentType": "Query",
+                "fieldName": "longRunningQuery",
+                "returnType": "[Book]",
+                "startOffset": 693900,
+                "duration": 4000051100
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4000803700,
+                "duration": 18600
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 4000825900,
+                "duration": 1011380100
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4001210400,
+                "duration": 5700
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 4001218700,
+                "duration": 1011096100
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4001511800,
+                "duration": 5000
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "author"
+                ],
+                "parentType": "Book",
+                "fieldName": "author",
+                "returnType": "Author",
+                "startOffset": 4001519100,
+                "duration": 1010836900
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  0,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 5012262000,
+                "duration": 27100
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  1,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 5012321900,
+                "duration": 3800
+              },
+              {
+                "path": [
+                  "longRunningQuery",
+                  2,
+                  "author",
+                  "name"
+                ],
+                "parentType": "Author",
+                "fieldName": "name",
+                "returnType": "String",
+                "startOffset": 5012361900,
+                "duration": 3700
+              }
+            ]
+          }
         }
       ]
     },
     "0298f268c92cfb0a5cf02b2b7a6bbaaaf5e31d15409eeef16a6b0cd3bff77d4e": {
-      "count": 127,
+      "count": 191,
       "type": "mutation",
       "name": "addBook",
       "tracingInfos": [
@@ -29820,6 +31711,3821 @@
                 "returnType": "String",
                 "startOffset": 541300,
                 "duration": 2900
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:56.615Z",
+          "endTime": "2021-04-25T08:25:56.619Z",
+          "duration": 3702100,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 3235000,
+                "duration": 225200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3500500,
+                "duration": 48100
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3567300,
+                "duration": 9500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3597400,
+                "duration": 9400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:56.790Z",
+          "endTime": "2021-04-25T08:25:56.791Z",
+          "duration": 790200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 602800,
+                "duration": 28700
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 657100,
+                "duration": 15100
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 685800,
+                "duration": 6600
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 701400,
+                "duration": 4900
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:56.936Z",
+          "endTime": "2021-04-25T08:25:56.937Z",
+          "duration": 782200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 615700,
+                "duration": 18100
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 655100,
+                "duration": 9900
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 680600,
+                "duration": 6500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 696700,
+                "duration": 4500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:57.085Z",
+          "endTime": "2021-04-25T08:25:57.086Z",
+          "duration": 1154400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 984500,
+                "duration": 22100
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1029500,
+                "duration": 7500
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1044500,
+                "duration": 7600
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1057700,
+                "duration": 4300
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:57.247Z",
+          "endTime": "2021-04-25T08:25:57.248Z",
+          "duration": 773400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 599500,
+                "duration": 23300
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 650500,
+                "duration": 9100
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 668300,
+                "duration": 8000
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 682600,
+                "duration": 4300
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:57.394Z",
+          "endTime": "2021-04-25T08:25:57.395Z",
+          "duration": 690900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 551100,
+                "duration": 17200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 587000,
+                "duration": 7100
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 601200,
+                "duration": 4600
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 611300,
+                "duration": 4200
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:57.548Z",
+          "endTime": "2021-04-25T08:25:57.549Z",
+          "duration": 827400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 661700,
+                "duration": 20500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 703600,
+                "duration": 7700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 719800,
+                "duration": 5000
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 730600,
+                "duration": 5100
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:57.723Z",
+          "endTime": "2021-04-25T08:25:57.723Z",
+          "duration": 705200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 550800,
+                "duration": 20200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 592700,
+                "duration": 10500
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 612200,
+                "duration": 5500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 624600,
+                "duration": 3900
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:57.870Z",
+          "endTime": "2021-04-25T08:25:57.871Z",
+          "duration": 734400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 573800,
+                "duration": 23800
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 618400,
+                "duration": 6600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 632900,
+                "duration": 4800
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 644400,
+                "duration": 4100
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:58.036Z",
+          "endTime": "2021-04-25T08:25:58.037Z",
+          "duration": 1097200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 946400,
+                "duration": 15700
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 980600,
+                "duration": 6300
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 994100,
+                "duration": 4100
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1003600,
+                "duration": 3700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:58.200Z",
+          "endTime": "2021-04-25T08:25:58.200Z",
+          "duration": 756100,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 614500,
+                "duration": 16000
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 650700,
+                "duration": 8000
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 666100,
+                "duration": 5800
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 677500,
+                "duration": 4100
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:58.374Z",
+          "endTime": "2021-04-25T08:25:58.374Z",
+          "duration": 749200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 598600,
+                "duration": 21600
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 639600,
+                "duration": 8600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 655700,
+                "duration": 5500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 666800,
+                "duration": 5700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:58.526Z",
+          "endTime": "2021-04-25T08:25:58.527Z",
+          "duration": 668500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 533300,
+                "duration": 15600
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 567700,
+                "duration": 6800
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 581700,
+                "duration": 4200
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 591300,
+                "duration": 3600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:58.704Z",
+          "endTime": "2021-04-25T08:25:58.704Z",
+          "duration": 742000,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 585400,
+                "duration": 21500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 626400,
+                "duration": 8100
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 641800,
+                "duration": 4100
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 651400,
+                "duration": 3500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:58.858Z",
+          "endTime": "2021-04-25T08:25:58.859Z",
+          "duration": 968600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 755400,
+                "duration": 19900
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 865900,
+                "duration": 6800
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 879600,
+                "duration": 3800
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 888200,
+                "duration": 3400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:59.074Z",
+          "endTime": "2021-04-25T08:25:59.074Z",
+          "duration": 662300,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 531400,
+                "duration": 14500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 566700,
+                "duration": 5800
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 579000,
+                "duration": 4400
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 588400,
+                "duration": 5600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:59.439Z",
+          "endTime": "2021-04-25T08:25:59.439Z",
+          "duration": 648800,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 520000,
+                "duration": 14700
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 552000,
+                "duration": 5900
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 564300,
+                "duration": 3700
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 572900,
+                "duration": 3200
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:59.594Z",
+          "endTime": "2021-04-25T08:25:59.594Z",
+          "duration": 652900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 520600,
+                "duration": 16100
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 555500,
+                "duration": 5600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 567600,
+                "duration": 3800
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 576300,
+                "duration": 3200
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:25:59.929Z",
+          "endTime": "2021-04-25T08:25:59.929Z",
+          "duration": 712500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 574000,
+                "duration": 15500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 609700,
+                "duration": 6100
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 622700,
+                "duration": 4800
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 632500,
+                "duration": 3300
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:26:00.122Z",
+          "endTime": "2021-04-25T08:26:00.123Z",
+          "duration": 727700,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 600500,
+                "duration": 14900
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 631900,
+                "duration": 5400
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 643900,
+                "duration": 3600
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 652300,
+                "duration": 3400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:29:09.985Z",
+          "endTime": "2021-04-25T08:29:10.005Z",
+          "duration": 20371600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 3553300,
+                "duration": 2023400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:29:16.448Z",
+          "endTime": "2021-04-25T08:29:16.473Z",
+          "duration": 24593400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 7122500,
+                "duration": 1466000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:29:27.016Z",
+          "endTime": "2021-04-25T08:29:27.031Z",
+          "duration": 15281500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 713800,
+                "duration": 1149100
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T14:06:41.148Z",
+          "endTime": "2021-04-25T14:06:41.160Z",
+          "duration": 12390900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 3585300,
+                "duration": 8658400
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 12299800,
+                "duration": 19700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 12325800,
+                "duration": 5200
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 12334600,
+                "duration": 3100
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:22.487Z",
+          "endTime": "2021-04-25T15:22:22.494Z",
+          "duration": 7482100,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 5679600,
+                "duration": 1594500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7342700,
+                "duration": 40600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7414600,
+                "duration": 5900
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7424700,
+                "duration": 3300
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:22.641Z",
+          "endTime": "2021-04-25T15:22:22.642Z",
+          "duration": 1262400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 567800,
+                "duration": 633200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1219800,
+                "duration": 9400
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1234600,
+                "duration": 3700
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1242800,
+                "duration": 3300
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:22.859Z",
+          "endTime": "2021-04-25T15:22:22.860Z",
+          "duration": 1440500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 715500,
+                "duration": 655200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1397400,
+                "duration": 8700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1411800,
+                "duration": 5300
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1420600,
+                "duration": 3100
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:23.016Z",
+          "endTime": "2021-04-25T15:22:23.029Z",
+          "duration": 12512600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 585500,
+                "duration": 11783000
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 12431300,
+                "duration": 25600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 12464800,
+                "duration": 4500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 12473100,
+                "duration": 5300
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:23.165Z",
+          "endTime": "2021-04-25T15:22:23.169Z",
+          "duration": 4609100,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 826800,
+                "duration": 3701200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4553900,
+                "duration": 14400
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4576700,
+                "duration": 4000
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4584400,
+                "duration": 4900
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:23.314Z",
+          "endTime": "2021-04-25T15:22:23.326Z",
+          "duration": 11446300,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 556500,
+                "duration": 10734300
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 11352200,
+                "duration": 28600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 11389900,
+                "duration": 7500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 11401300,
+                "duration": 15500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:23.454Z",
+          "endTime": "2021-04-25T15:22:23.469Z",
+          "duration": 15142400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 494800,
+                "duration": 14526900
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15075000,
+                "duration": 21700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15102600,
+                "duration": 4000
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15110200,
+                "duration": 3000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:23.609Z",
+          "endTime": "2021-04-25T15:22:23.625Z",
+          "duration": 16439000,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 535500,
+                "duration": 15795800
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 16371600,
+                "duration": 20200
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 16399700,
+                "duration": 4000
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 16407400,
+                "duration": 4600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:23.764Z",
+          "endTime": "2021-04-25T15:22:23.766Z",
+          "duration": 1613800,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 767100,
+                "duration": 767700
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1565400,
+                "duration": 13600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1585100,
+                "duration": 3700
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1592300,
+                "duration": 3000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:23.894Z",
+          "endTime": "2021-04-25T15:22:23.911Z",
+          "duration": 17227400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 503200,
+                "duration": 16598600
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17155200,
+                "duration": 26200
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17188300,
+                "duration": 4100
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17196200,
+                "duration": 3000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T15:22:24.055Z",
+          "endTime": "2021-04-25T15:22:24.056Z",
+          "duration": 1259400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 543800,
+                "duration": 651400
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1215900,
+                "duration": 9500
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1231500,
+                "duration": 3600
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1238800,
+                "duration": 2800
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:50.528Z",
+          "endTime": "2021-04-25T16:11:50.546Z",
+          "duration": 18038900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 715700,
+                "duration": 17150700
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17941400,
+                "duration": 46700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17995000,
+                "duration": 5700
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 18004200,
+                "duration": 4800
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:50.685Z",
+          "endTime": "2021-04-25T16:11:50.686Z",
+          "duration": 1321600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 501400,
+                "duration": 752600
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1273600,
+                "duration": 12700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1291500,
+                "duration": 4800
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1300600,
+                "duration": 3800
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:50.833Z",
+          "endTime": "2021-04-25T16:11:50.844Z",
+          "duration": 11812000,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 496400,
+                "duration": 11201300
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 11749300,
+                "duration": 20400
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 11775100,
+                "duration": 3300
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 11782800,
+                "duration": 2700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:50.999Z",
+          "endTime": "2021-04-25T16:11:51.000Z",
+          "duration": 1311800,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 596300,
+                "duration": 627400
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1244800,
+                "duration": 10200
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1284300,
+                "duration": 3600
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1291300,
+                "duration": 2700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:51.151Z",
+          "endTime": "2021-04-25T16:11:51.159Z",
+          "duration": 7990200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 506000,
+                "duration": 7362800
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7921500,
+                "duration": 22100
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7949800,
+                "duration": 3700
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7958100,
+                "duration": 2700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:51.289Z",
+          "endTime": "2021-04-25T16:11:51.299Z",
+          "duration": 10266800,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 521700,
+                "duration": 9631300
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 10202600,
+                "duration": 19300
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 10227400,
+                "duration": 4800
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 10235400,
+                "duration": 2700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:51.437Z",
+          "endTime": "2021-04-25T16:11:51.438Z",
+          "duration": 1179400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 510900,
+                "duration": 605100
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1138400,
+                "duration": 7600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1151500,
+                "duration": 3400
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1158200,
+                "duration": 2600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:51.579Z",
+          "endTime": "2021-04-25T16:11:51.583Z",
+          "duration": 3636100,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 994400,
+                "duration": 2534000
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3574100,
+                "duration": 18700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3598700,
+                "duration": 3300
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3606500,
+                "duration": 2700
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:51.737Z",
+          "endTime": "2021-04-25T16:11:51.739Z",
+          "duration": 2604300,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 654100,
+                "duration": 1851300
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2544100,
+                "duration": 15400
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2567500,
+                "duration": 3700
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2575700,
+                "duration": 5400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:51.885Z",
+          "endTime": "2021-04-25T16:11:51.896Z",
+          "duration": 10554600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 502900,
+                "duration": 9887200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 10474000,
+                "duration": 26900
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 10507600,
+                "duration": 4400
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 10516400,
+                "duration": 3100
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:11:52.039Z",
+          "endTime": "2021-04-25T16:11:52.040Z",
+          "duration": 1274400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 624000,
+                "duration": 595600
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1237200,
+                "duration": 6600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1248700,
+                "duration": 4000
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1256000,
+                "duration": 2500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:43.024Z",
+          "endTime": "2021-04-25T16:19:43.025Z",
+          "duration": 1144100,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 498800,
+                "duration": 590500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1105900,
+                "duration": 6700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1117300,
+                "duration": 4100
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1124600,
+                "duration": 2600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:43.193Z",
+          "endTime": "2021-04-25T16:19:43.194Z",
+          "duration": 1163900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 472700,
+                "duration": 637100
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1125300,
+                "duration": 7000
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1136800,
+                "duration": 4300
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1144200,
+                "duration": 4000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:43.369Z",
+          "endTime": "2021-04-25T16:19:43.387Z",
+          "duration": 17516300,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 495300,
+                "duration": 16903200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17442100,
+                "duration": 17800
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17465400,
+                "duration": 3400
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17472100,
+                "duration": 2500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:43.523Z",
+          "endTime": "2021-04-25T16:19:43.529Z",
+          "duration": 5727500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 498100,
+                "duration": 5129100
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 5664000,
+                "duration": 21800
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 5691600,
+                "duration": 3300
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 5699100,
+                "duration": 2800
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:19:43.655Z",
+          "endTime": "2021-04-25T16:19:43.657Z",
+          "duration": 1850700,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 549100,
+                "duration": 1163500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1764800,
+                "duration": 23500
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1796600,
+                "duration": 4300
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1805500,
+                "duration": 3900
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T16:20:01.041Z",
+          "endTime": "2021-04-25T16:20:01.045Z",
+          "duration": 4145900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 470700,
+                "duration": 3537100
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4067900,
+                "duration": 21000
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4097200,
+                "duration": 4400
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 4106700,
+                "duration": 4200
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:09.546Z",
+          "endTime": "2021-04-25T17:21:09.555Z",
+          "duration": 9684900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 533400,
+                "duration": 9028500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 9619100,
+                "duration": 22300
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 9646700,
+                "duration": 4500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 9654200,
+                "duration": 2600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:09.708Z",
+          "endTime": "2021-04-25T17:21:09.714Z",
+          "duration": 5637400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 515900,
+                "duration": 5011600
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 5575800,
+                "duration": 19800
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 5600600,
+                "duration": 3400
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 5607900,
+                "duration": 2600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:09.865Z",
+          "endTime": "2021-04-25T17:21:09.872Z",
+          "duration": 6782400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 504900,
+                "duration": 6175400
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 6723100,
+                "duration": 17500
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 6746300,
+                "duration": 3600
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 6752800,
+                "duration": 2500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:10.011Z",
+          "endTime": "2021-04-25T17:21:10.014Z",
+          "duration": 3619900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 566900,
+                "duration": 2937000
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3551600,
+                "duration": 23400
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3582200,
+                "duration": 3400
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 3588500,
+                "duration": 2400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:10.163Z",
+          "endTime": "2021-04-25T17:21:10.171Z",
+          "duration": 7733200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 502000,
+                "duration": 7114800
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7664600,
+                "duration": 24400
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7694600,
+                "duration": 3200
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 7701700,
+                "duration": 2500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:10.303Z",
+          "endTime": "2021-04-25T17:21:10.312Z",
+          "duration": 9353400,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 491600,
+                "duration": 8706400
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 9267100,
+                "duration": 28400
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 9303000,
+                "duration": 3500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 9310900,
+                "duration": 2500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:10.437Z",
+          "endTime": "2021-04-25T17:21:10.452Z",
+          "duration": 15382600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 500100,
+                "duration": 14766600
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15315200,
+                "duration": 20000
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15340300,
+                "duration": 3500
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15350800,
+                "duration": 2600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:10.597Z",
+          "endTime": "2021-04-25T17:21:10.612Z",
+          "duration": 15677200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 622500,
+                "duration": 14942300
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15613900,
+                "duration": 20000
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15639300,
+                "duration": 3200
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15646300,
+                "duration": 2600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:10.755Z",
+          "endTime": "2021-04-25T17:21:10.770Z",
+          "duration": 15329600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 487600,
+                "duration": 14734100
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15267400,
+                "duration": 18200
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15290900,
+                "duration": 3400
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 15297200,
+                "duration": 2600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:10.895Z",
+          "endTime": "2021-04-25T17:21:10.912Z",
+          "duration": 17286700,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 470600,
+                "duration": 16678500
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17211000,
+                "duration": 26700
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17243400,
+                "duration": 3200
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 17249400,
+                "duration": 2600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:11.054Z",
+          "endTime": "2021-04-25T17:21:11.070Z",
+          "duration": 16721600,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 717600,
+                "duration": 15892600
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 16658200,
+                "duration": 18600
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 16684100,
+                "duration": 3300
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 16690300,
+                "duration": 2500
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T17:21:11.206Z",
+          "endTime": "2021-04-25T17:21:11.208Z",
+          "duration": 1134200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 496600,
+                "duration": 583200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1096700,
+                "duration": 6300
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1107800,
+                "duration": 4100
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 1114700,
+                "duration": 2600
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "30e0817c10bc28cacf585f773a0b42faac3b5ce93d9758025359d6dd566b459b": {
+      "count": 13,
+      "type": "mutation",
+      "name": "addBook",
+      "tracingInfos": [
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:30:23.781Z",
+          "endTime": "2021-04-25T08:30:23.799Z",
+          "duration": 18076200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 3664600,
+                "duration": 264200
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:30:26.865Z",
+          "endTime": "2021-04-25T08:30:26.887Z",
+          "duration": 22129500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 4402600,
+                "duration": 363900
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:30:33.823Z",
+          "endTime": "2021-04-25T08:30:33.842Z",
+          "duration": 18879700,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 4074100,
+                "duration": 244100
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:30:35.389Z",
+          "endTime": "2021-04-25T08:30:35.406Z",
+          "duration": 16055200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 1077600,
+                "duration": 105600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:04.287Z",
+          "endTime": "2021-04-25T08:31:04.296Z",
+          "duration": 8723000,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 7343800,
+                "duration": 1232600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:07.746Z",
+          "endTime": "2021-04-25T08:31:07.748Z",
+          "duration": 1825300,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 740100,
+                "duration": 941400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:16.562Z",
+          "endTime": "2021-04-25T08:31:16.569Z",
+          "duration": 6704000,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 4195700,
+                "duration": 2370600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:19.474Z",
+          "endTime": "2021-04-25T08:31:19.475Z",
+          "duration": 1866300,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 667800,
+                "duration": 1087000
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:29.128Z",
+          "endTime": "2021-04-25T08:31:29.148Z",
+          "duration": 20490300,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 4310800,
+                "duration": 316800
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:39.592Z",
+          "endTime": "2021-04-25T08:31:39.598Z",
+          "duration": 5988900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 4263000,
+                "duration": 1580800
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:42.305Z",
+          "endTime": "2021-04-25T08:31:42.307Z",
+          "duration": 2233900,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 987600,
+                "duration": 1134600
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:53.207Z",
+          "endTime": "2021-04-25T08:31:55.221Z",
+          "duration": 2014239500,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 3943900,
+                "duration": 2009419200
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2013651200,
+                "duration": 391300
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2014089200,
+                "duration": 14700
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2014120700,
+                "duration": 11400
+              }
+            ]
+          }
+        },
+        {
+          "version": 1,
+          "startTime": "2021-04-25T08:31:57.016Z",
+          "endTime": "2021-04-25T08:31:59.029Z",
+          "duration": 2012379200,
+          "execution": {
+            "resolvers": [
+              {
+                "path": [
+                  "addBook"
+                ],
+                "parentType": "Mutation",
+                "fieldName": "addBook",
+                "returnType": "[Book]",
+                "startOffset": 631200,
+                "duration": 2011556700
+              },
+              {
+                "path": [
+                  "addBook",
+                  0,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2012269800,
+                "duration": 41900
+              },
+              {
+                "path": [
+                  "addBook",
+                  1,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2012323400,
+                "duration": 6200
+              },
+              {
+                "path": [
+                  "addBook",
+                  2,
+                  "title"
+                ],
+                "parentType": "Book",
+                "fieldName": "title",
+                "returnType": "String",
+                "startOffset": 2012336300,
+                "duration": 4600
               }
             ]
           }

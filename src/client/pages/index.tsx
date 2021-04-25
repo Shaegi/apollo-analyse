@@ -4,10 +4,25 @@ import TextWidget from '../components/TextWidget'
 import { ErrorInfo, TracingInfo } from '../types/TracingInfo'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import MainNav from '../components/MainNav'
-import { Area, Bar, BarChart, CartesianGrid, ComposedChart, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
+import {
+  Area,
+  Bar,
+  BarChart,
+  CartesianGrid,
+  ComposedChart,
+  Line,
+  LineChart,
+  Scatter,
+  ScatterChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+  ZAxis
+} from 'recharts'
 import { useIntl } from 'react-intl'
 import moment from 'moment'
 import { roundTo2Precision } from './operation/tabs/utils'
+import { convertNSToMs } from '../utils'
 
 const Wrapper = styled.main`
   padding: 16px;
@@ -125,18 +140,31 @@ function Dashboard(props: InferGetStaticPropsType<typeof getServerSideProps>) {
         const mutationCount = interval.values.reduce((acc, curr) => (curr.type === 'mutation' ? acc + 1 : acc), 0)
         const mutationRPM = roundTo2Precision(mutationCount / minutesPerInterval)
         const queryRPM = roundTo2Precision(queryCount / minutesPerInterval)
+        const latencies = interval.values.map((value) => value.duration)
         return {
           ...interval,
           count: interval.values.length,
           mutationCount: mutationCount,
           queryCount: queryCount,
           rpm: roundTo2Precision(interval.values.length / minutesPerInterval),
+          latencies,
           queryRPM,
           mutationRPM,
           start: formattedLabel
         }
       })
   }, [selectedInterval.id])
+
+  const latencyScatterData = operationsInInterval.reduce((acc, curr, index) => {
+    curr.latencies.forEach((latency) => {
+      acc.push({
+        x: index,
+        start: curr.start,
+        y: convertNSToMs(latency)
+      })
+    })
+    return acc
+  }, [])
 
   return (
     <MainNav index={0}>
@@ -182,7 +210,7 @@ function Dashboard(props: InferGetStaticPropsType<typeof getServerSideProps>) {
           <ComposedChart width={width - 32} height={250} data={operationsInInterval}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="start" domain={['dataMin', 'dataMax']} />
-            <YAxis dataKey={'rpm'} label="RPM" domain={['dataMin', (dataMax) => dataMax * 1.4]} />
+            <YAxis dataKey={'rpm'} label="RPM" />
             <Tooltip />
             <Line type="linear" connectNulls dataKey="rpm" stroke={theme.color.primary} name="Total" unit="rpm" />
             <Area
@@ -206,6 +234,63 @@ function Dashboard(props: InferGetStaticPropsType<typeof getServerSideProps>) {
               fillOpacity={0.3}
             />
           </ComposedChart>
+          <h2>Latency over time</h2>
+          <ScatterChart width={width - 32} height={400}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              type="number"
+              dataKey="x"
+              domain={[0, operationsInInterval.length]}
+              tickCount={operationsInInterval.length}
+              tick={(props) => {
+                const { x, y, payload, fill, width, height, orientation } = props
+                if (!payload.isShow) {
+                  return null
+                }
+                return (
+                  <text x={x} y={y} width={width} height={height} orientation={orientation} text-anchor="middle">
+                    <tspan x={x} dy="0.71em">
+                      {operationsInInterval[props.payload.value]?.start}
+                    </tspan>
+                  </text>
+                )
+              }}
+            />
+            <YAxis type="number" dataKey="y" unit={'ms'} />
+            <Tooltip
+              cursor={{ strokeDasharray: '3 3' }}
+              labelFormatter={(props) => ''}
+              formatter={(value, name, props) => {
+                switch (name) {
+                  case 'x': {
+                    return [operationsInInterval[value].start, 'Time']
+                  }
+                  case 'y': {
+                    return [value, 'Latency']
+                  }
+                }
+                return null
+              }}
+            />
+            <Scatter
+              data={latencyScatterData}
+              fill="#8884d8"
+              // shape={(props) => {
+              //   const { x, width, fill, yAxis, node } = props
+              //   const { y: nodeY } = node
+              //   const totalYAxisHeight = yAxis.height
+              //   // for some reason you have to substract 2x yAxis offset.
+              //   // calculate the normalized value of one datapoint e.g. 100px height domain 0 - 400. Each "domainpoint" will be worth it 0.25px
+              //   // so a scatter with Y [200, 400] should have 50px height
+              //   const heightPerDomainPoint = (totalYAxisHeight - 2 * yAxis.y) / (yAxis.domain[1] - yAxis.domain[0])
+              //   const resolvedHeight = (nodeY[1] - nodeY[0]) * heightPerDomainPoint
+              //   const nodeYOffset = nodeY[0] * heightPerDomainPoint
+              //   const resolvedY = totalYAxisHeight + yAxis.y - resolvedHeight - nodeYOffset
+              //   return <rect x={x} width={width} fill={fill} height={resolvedHeight} y={resolvedY} />
+              // }}
+              shape="square"
+            />
+          </ScatterChart>
           <h2>Total Operations</h2>
           <BarChart width={width - 32} height={250} data={operationsInInterval}>
             <CartesianGrid strokeDasharray="3 3" />

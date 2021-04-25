@@ -44,7 +44,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addBook (input: BookInput): [Book]
+    addBook (input: BookInput, delay: Int): [Book]
   }
 `
 
@@ -76,17 +76,21 @@ const books = [
   }
 ]
 
+const delayedPromise = (result, delay) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(result)
+    }, delay)
+  })
+}
+
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
   Query: {
     books: () => books,
     longRunningQuery: () => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(books)
-        }, (Math.floor(Math.random() * 6) + 1) * 1000)
-      })
+       return delayedPromise(books, (Math.floor(Math.random() * 6) + 1) * 1000)
     },
     maybeError: () => {
       return casual.boolean ? new Error('Woops you lost the coin-flip') : books
@@ -97,7 +101,9 @@ const resolvers = {
     }
   },
   Mutation: {
-    addBook: () => books
+    addBook: (parent, { delay }) => {
+       return delayedPromise(books,  delay || 0)
+      }
   },
   ErrorBook: {
     author: (parent) => {

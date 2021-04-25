@@ -62,7 +62,7 @@ const Operations: React.FC<OperationsProps> = (props) => {
 export async function getServerSideProps() {
   const {
     infos: tracingInfos,
-    errors,
+    errors
   }: {
     infos: Record<string, TracingInfo>
     errors: Record<string, ErrorInfo>
@@ -72,11 +72,8 @@ export async function getServerSideProps() {
   return {
     props: {
       tracingInfos,
-      errorCount: Object.values(errors).reduce(
-        (acc, curr) => acc + (curr.errors?.length || 0),
-        0
-      ),
-    },
+      errorCount: Object.values(errors).reduce((acc, curr) => acc + (curr.errors?.length || 0), 0)
+    }
   }
 }
 
