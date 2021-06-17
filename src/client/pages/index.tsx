@@ -23,6 +23,7 @@ import { useIntl } from 'react-intl'
 import moment from 'moment'
 import { roundTo2Precision } from './operation/tabs/utils'
 import { convertNSToMs } from '../utils'
+import FlameChart, { sortFlameChartDataPoints } from '../components/FlameChart'
 
 const Wrapper = styled.main`
   padding: 16px;
@@ -121,7 +122,7 @@ function Dashboard(props: InferGetStaticPropsType<typeof getServerSideProps>) {
       acc.push(...infos.tracingInfos.map((v) => ({ ...v, parent: curr, type: infos.type })))
       return acc
     }, [])
-
+    console.log(allOperations)
     return allOperations
       .reduce((acc, curr) => {
         const currStartTime = new Date(curr.startTime).getTime()
@@ -165,6 +166,44 @@ function Dashboard(props: InferGetStaticPropsType<typeof getServerSideProps>) {
     })
     return acc
   }, [])
+
+  const topOperationsData = sortFlameChartDataPoints(
+    operationsInInterval
+      .reduce<{ id: string; label: string; type: string; count: number }[]>((acc, curr) => {
+        curr.values.forEach((value) => {
+          const find = acc.find((operation) => operation.id === value.parent)
+
+          if (find) {
+            find.count += 1
+          } else {
+            acc.push({
+              id: value.parent,
+              label: value.execution.resolvers[0].fieldName,
+              type: value.type,
+              count: 1
+            })
+          }
+        })
+        return acc
+      }, [])
+      .map((value) => ({
+        label: (
+          <span
+            style={{
+              whiteSpace: 'pre'
+            }}
+          >
+            {value.label}
+            <b> {value.count} Operations</b>
+          </span>
+        ),
+        onClick: () => {
+          window.location.href = '/operation/' + value.id
+        },
+        color: value.type === 'query' ? theme.color.accent1 : theme.color.accent2,
+        value: value.count
+      }))
+  ).filter((v, i) => i < 10)
 
   return (
     <MainNav index={0}>
@@ -303,6 +342,7 @@ function Dashboard(props: InferGetStaticPropsType<typeof getServerSideProps>) {
         </div>
         <div>
           <h2>Top Operations</h2>
+          <FlameChart dataPoints={topOperationsData} />
         </div>
       </Wrapper>
     </MainNav>

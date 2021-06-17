@@ -7,7 +7,7 @@ import { ErrorInfo, Errors, TracingInfo } from '../../types/TracingInfo'
 import { formatNStoMsString, getAverageExecutionTimeInMs } from '../../utils'
 import AveragedOperation from './tabs/AveragedOperation'
 import ErrorDetails from './tabs/Errors'
-import FlameChart from './tabs/FlameChart'
+import FlameChart from '../../components/FlameChart'
 import PerOperation from './tabs/PerOperation'
 
 const Wrapper = styled.div`
@@ -33,6 +33,11 @@ const Wrapper = styled.div`
         list-style: decimal;
       }
     }
+  }
+
+  .duration {
+    font-weight: bold;
+    margin-left: ${(p) => p.theme.size.xs};
   }
 `
 
@@ -77,7 +82,37 @@ const OperationProps: React.FC<OperationProps> = (props) => {
           },
           {
             label: 'Resolver Flamechart',
-            content: <FlameChart tracingInfo={res.infos.tracingInfos[0].execution} />,
+            content: (
+              <FlameChart
+                dataPoints={res.infos.tracingInfos[0].execution.resolvers.map((resolver) => {
+                  const pathLabel = (() => {
+                    return resolver.path.map((v, i, a) => {
+                      const next = a[i + 1]
+                      if (typeof v === 'number') {
+                        const label = `[${v}]`
+                        if (next && typeof next === 'string') {
+                          return label + '.'
+                        }
+                        return label
+                      }
+                      if (next && typeof a[i + 1] !== 'number') {
+                        return v + '.'
+                      }
+                      return v
+                    })
+                  })()
+                  return {
+                    label: (
+                      <>
+                        {pathLabel}
+                        <span className="duration">{formatNStoMsString(resolver.duration)}</span>
+                      </>
+                    ),
+                    value: resolver.duration
+                  }
+                })}
+              />
+            ),
             id: 'averagedOperation'
           },
           {

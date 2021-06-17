@@ -5,7 +5,7 @@ import { formatNStoMsString } from '../../../utils'
 import { geClosestNumber } from './utils'
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Tooltip, XAxis, YAxis } from 'recharts'
 import Tabs from '../../../components/HorizontalTabs'
-import FlameChart from './FlameChart'
+import FlameChart from '../../../components/FlameChart'
 import ResolverInfo from './ResolverInfo'
 
 type WrapperProps = {}
@@ -123,7 +123,37 @@ const PerOperation: React.FC<PerOperationProps> = (props) => {
           {
             id: 'flameChart',
             label: 'Flamechart',
-            content: <FlameChart tracingInfo={selectedOperation.execution} />
+            content: (
+              <FlameChart
+                dataPoints={selectedOperation.execution.resolvers.map((resolver) => {
+                  const pathLabel = (() => {
+                    return resolver.path.map((v, i, a) => {
+                      const next = a[i + 1]
+                      if (typeof v === 'number') {
+                        const label = `[${v}]`
+                        if (next && typeof next === 'string') {
+                          return label + '.'
+                        }
+                        return label
+                      }
+                      if (next && typeof a[i + 1] !== 'number') {
+                        return v + '.'
+                      }
+                      return v
+                    })
+                  })()
+                  return {
+                    label: (
+                      <>
+                        {pathLabel}
+                        <span className="duration">{formatNStoMsString(resolver.duration)}</span>
+                      </>
+                    ),
+                    value: resolver.duration
+                  }
+                })}
+              />
+            )
           }
         ]}
         onSelect={(info, index) => setSelectedTabIndex(index)}
